@@ -11,7 +11,7 @@ body {
     font-family: 'Kanit', sans-serif;
 }
 
-nav .bglanding {
+nav .bgImage {
     width: 100%;
     background: url(/Images/BGLanding.png);
 }
