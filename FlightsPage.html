@@ -7,12 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Navbar Template</title>
+    <title>Flights Page</title>
 </head>
 
 <body>
 
-    <!------------------------------------ Navbar Template ------------------------------------>
+    <!------------------------------------ Navbar ------------------------------------>
     <nav>
         <!-- BG -->
         <section class="bgImage absolute h-48"></section>
@@ -21,7 +21,7 @@
         <div class="container flex flex-row items-center justify-between mx-auto pt-8">
             <div class="items-center justify-between space-x-20 w-full md:flex md:w-auto z-10">
                 <!-- Logo -->
-                <a href="#" class="flex items-center">
+                <a href="LandingPage.html" class="flex items-center">
                     <i class="fab fa-slack fa-2x" alt="Logo"></i>
                     <span class="self-center text-2xl font-bold whitespace-nowrap ml-2">KLAIKHUN</span>
                 </a>
@@ -30,15 +30,15 @@
                 <ul
                     class="flex flex-col p-4 mt-4 md:flex-row md:space-x-14 md:mt-0 md:text-base md:font-medium md:border-0">
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 rounded md:p-0" aria-current="page">Hotels</a>
+                        <a href="HotelsPage.html"
+                            class="block py-2 pl-3 pr-4 rounded md:p-0 text-gray-500 md:hover:bg-transparent md:hover:text-black">Hotels</a>
+                    </li>
+                    <li>
+                        <a href="FlightsPage.html" class="block py-2 pl-3 pr-4 rounded md:p-0">Flights</a>
                     </li>
                     <li>
                         <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-black md:p-0">Flights</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-black md:p-0">Deals</a>
+                            class="block py-2 pl-3 pr-4 rounded md:p-0 text-gray-500 md:hover:bg-transparent md:hover:text-black">Deals</a>
                     </li>
                 </ul>
             </div>
@@ -51,57 +51,6 @@
                 </button>
             </div>
         </div>
-
-        <!---------------------------- Booking Hotels ---------------------------->
-        <div class="booking container mx-auto mt-6 relative">
-            <div
-                class="bg-white border rounded-xl shadow-lg h-40 flex flex-row items-center justify-between p-5 space-x-5">
-                <!-- Destination -->
-                <div class="box bg-white border border-gray-300 rounded-xl flex flex-col justify-center px-8"
-                    style="width: 25%;">
-                    <span class="text-gray-500 text-sm font-medium">DESTINATION</span>
-                    <span class="text-black text-3xl font-bold">Bangkok</span>
-                </div>
-
-                <!-- Check-In & Check-Out -->
-                <div class="box bg-white border border-gray-300 rounded-xl flex items-center justify-between px-8"
-                    style="width: 40%;">
-                    <div class="checkIn">
-                        <span class="text-gray-500 text-sm font-medium">CHECK-IN</span>
-                        <div>
-                            <span class="text-black text-3xl font-bold mr-8">Sat, Feb 11</span>
-                            <i class="fas fa-calendar-alt fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="checkOut">
-                        <span class="text-gray-500 text-sm font-medium">CHECK-OUT</span>
-                        <div>
-                            <span class="text-black text-3xl font-bold mr-8">Sun, Feb 12</span>
-                            <i class="fas fa-calendar-alt fa-2x"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Room & Guests -->
-                <div class="box bg-white border border-gray-300 rounded-xl flex flex-col justify-center px-8"
-                    style="width: 35%;">
-                    <span class="text-gray-500 text-sm font-medium">ROOM AND GUESTS</span>
-                    <div>
-                        <span class="text-black text-3xl font-bold mr-6">1 Room, 2 Adults, 1 Child</span>
-                        <i class="fas fas fa-angle-down fa-2x"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Search btn -->
-            <button class="bg-black h-16 w-56 rounded-xl absolute right-4 top-36">
-                <span class="text-white font-light mr-5">Search Hotels</span>
-                <i class="fas fa-angle-right text-white"></i>
-            </button>
-        </div>
-
-
-
 
         <!---------------------------- Booking Flights ---------------------------->
         <div class="booking container mx-auto mt-6 relative">
