@@ -60,16 +60,22 @@
 
         <!-- Booking -->
         <div class="booking container mx-auto mt-6 relative h-4/5">
-            <!-- Hotel & Filght -->
-            <div>
-                <button class="bg-black h-16 w-56 rounded-xl absolute bottom-52 z-10">
-                    <i class="fas fa-angle-right text-white mr-5"></i>
-                    <span class="text-white text-lg font-light">Hotels</span>
+            <div class="absolute flex bottom-52">
+                <!-- Hotels -->
+                <button class="h-16 w-56 rounded-tl-3xl bg-white">
+                    <i class="fa-sharp fa-solid fa-hotel text-black mr-3"></i>
+                    <span class="text-black text-lg font-medium">Hotels</span>
+                </button>
+
+                <!-- Flights -->
+                <button class="h-16 w-56 rounded-tr-3xl bg-black opacity-90">
+                    <i class="fa-solid fa-plane-departure text-white mr-3"></i>
+                    <span class="text-white text-lg">Flights</span>
                 </button>
             </div>
 
             <div
-                class="bg-white border rounded-3xl shadow-lg h-52 flex flex-row items-center justify-between px-8 py-10 space-x-5 absolute w-full bottom-0 max-2xl:bottom-3">
+                class="bg-white rounded-3xl shadow-lg rounded-tl-none h-52 flex flex-row items-center justify-between px-8 py-10 space-x-5 absolute w-full bottom-0 max-2xl:bottom-3 z-20">
                 <!-- Destination -->
                 <div class="box bg-white border border-gray-300 rounded-xl flex flex-col justify-center px-8"
                     style="width: 25%;">
@@ -107,7 +113,7 @@
             </div>
 
             <!-- Search btn -->
-            <button class="bg-black h-16 w-56 rounded-xl absolute -bottom-10 max-2xl:-bottom-6 right-8">
+            <button class="bg-black h-16 w-56 rounded-xl absolute -bottom-10 max-2xl:-bottom-6 right-8 z-30">
                 <span class="text-white text-lg font-light mr-5">Search Hotels</span>
                 <i class="fas fa-angle-right text-white"></i>
             </button>
