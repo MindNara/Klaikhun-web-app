@@ -14,10 +14,11 @@
 
     <header>
         <!-- BG -->
-        <section class="bgLanding absolute h-5/6">
-            <div class="container mx-auto mt-6 flex flex-col justify-center h-4/5">
-                <span class="text-7xl font-medium">Find And Book</span>
-                <span class="text-7xl font-light">A Great Experience</span>
+        <section class="bgLanding absolute h-screen w-full">
+            <img src="/Images/BGLanding.png" alt="bg" class="absolute w-full max-2xl:h-5/6">
+            <div class="relative container mx-auto mt-6 flex flex-col justify-center h-4/6">
+                <span class="text-7xl max-2xl:text-6xl font-medium">Find And Book</span>
+                <span class="text-7xl max-2xl:text-6xl font-light">A Great Experience</span>
             </div>
         </section>
 
@@ -58,8 +59,50 @@
         </nav>
 
         <!-- Booking -->
-        <div>
+        <div class="booking container mx-auto mt-6 relative h-4/5">
+            <div
+                class="bg-white border rounded-xl shadow-lg h-52 flex flex-row items-center justify-between px-8 py-10 space-x-5 absolute w-full bottom-0 max-2xl:bottom-3">
+                <!-- Destination -->
+                <div class="box bg-white border border-gray-300 rounded-xl flex flex-col justify-center px-8"
+                    style="width: 25%;">
+                    <span class="text-gray-500 text-sm max-2xl:text-xs font-medium">DESTINATION</span>
+                    <span class="text-black text-3xl font-bold">Bangkok</span>
+                </div>
 
+                <!-- Check-In & Check-Out -->
+                <div class="box bg-white border border-gray-300 rounded-xl flex items-center justify-between px-8"
+                    style="width: 40%;">
+                    <div class="checkIn">
+                        <span class="text-gray-500 text-sm max-2xl:text-xs font-medium">CHECK-IN</span>
+                        <div>
+                            <span class="text-black text-3xl font-bold mr-5 max-2xl:mr-3">Sat, Feb 11</span>
+                            <i class="fas fa-calendar-alt fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="checkOut">
+                        <span class="text-gray-500 text-sm max-2xl:text-xs font-medium">CHECK-OUT</span>
+                        <div>
+                            <span class="text-black text-3xl font-bold mr-5 max-2xl:mr-3">Sun, Feb 12</span>
+                            <i class="fas fa-calendar-alt fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room & Guests -->
+                <div class="box bg-white border border-gray-300 rounded-xl flex flex-col justify-center px-8"
+                    style="width: 35%;">
+                    <span class="text-gray-500 text-sm max-2xl:text-xs font-medium">ROOM AND GUESTS</span>
+                    <div>
+                        <span class="text-black text-3xl max-2xl:text-3xl font-bold">1 Room, 2 Adults, 1 Child</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search btn -->
+            <button class="bg-black h-16 w-56 rounded-xl absolute -bottom-10 max-2xl:-bottom-6 right-8">
+                <span class="text-white font-light mr-5">Search Hotels</span>
+                <i class="fas fa-angle-right text-white"></i>
+            </button>
         </div>
 
     </header>
