@@ -1,18 +1,28 @@
 import { useState } from 'react'
-import { Navbar , HotelSearch, FlightSearch } from './components'
+import Navbar from './components/Navbar'
+import { Route, Routes } from "react-router-dom";
+import { Landing, Hotel, Flight } from './pages/index';
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div>
-      <Navbar />
-      <div className='flex-row relative mt-[400px]'>
-        <HotelSearch />
-        <FlightSearch />
+      <div className="flex justify-center items-center">
+        <Navbar />
+      </div>
+      <div>
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/hotels' element={<Hotel />} />
+          <Route path='/flights' element={<Flight />} />
+        </Routes>
       </div>
     </div>
+   
   )
 }
 
 export default App
+

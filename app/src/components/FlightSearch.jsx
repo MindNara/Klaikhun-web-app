@@ -44,7 +44,7 @@ const FlightSearch = () => (
         </div>
     </div>
       {/* <!-- Search btn --> */}
-      <button className="bg-black h-16 w-56 rounded-xl right-4 justify-center flex items-center ml-[1010px]">
+      <button className="bg-black h-16 w-56 rounded-xl right-4 justify-center flex items-center ml-[1040px] mt-[20px]">
           <span className="text-white font-light mr-5">Search Flights</span>
           <i className="fas fa-angle-right text-white"></i>
       </button>
