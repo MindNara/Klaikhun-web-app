@@ -1,12 +1,16 @@
 import { useState } from 'react'
-import Navbar from './components/Navbar'
+import { Navbar , HotelSearch, FlightSearch } from './components'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="flex justify-center items-center">
+    <div>
       <Navbar />
+      <div className='flex-row relative mt-[400px]'>
+        <HotelSearch />
+        <FlightSearch />
+      </div>
     </div>
   )
 }
