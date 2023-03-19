@@ -1,51 +1,51 @@
-import React from 'react'
+import React from "react";
 
 const HotelSearch = () => (
-    <nav className="booking container mx-auto mt-10 relative">
-        <div className="bg-white border rounded-xl shadow-lg h-40 flex flex-row items-center justify-between p-5 space-x-5">
-            {/* <!-- Destination --> */}
-            <div className="box bg-white border border-gray-300 rounded-xl flex flex-col justify-center px-8"
-                styles="width: 25%;">
-                <span className="text-gray-500 text-sm font-medium">DESTINATION</span>
-                <span className="text-black text-3xl font-bold">Bangkok</span>
-            </div>
+  <div className="bg-white rounded-2xl shadow-lg h-44 flex flex-row items-center justify-between p-8 space-x-5 absolute w-full">
+    {/* <!-- Destination --> */}
+    <div className="bg-white border border-gray-2 rounded-2xl flex flex-col justify-center px-8 w-1/4 h-full">
+      <span className="text-gray-1 text-sm font-medium">DESTINATION</span>
+      <span className="text-black text-3xl font-bold">Bangkok</span>
+    </div>
 
-            {/* <!-- Check-In & Check-Out --> */}
-            <div className="box bg-white border border-gray-300 rounded-xl flex items-center justify-between px-8"
-                styles="width: 40%;">
-                <div className="checkIn">
-                    <span className="text-gray-500 text-sm font-medium">CHECK-IN</span>
-                    <div>
-                        <span className="text-black text-3xl font-bold mr-8">Sat, Feb 11</span>
-                        <i className="fas fa-calendar-alt fa-2x"></i>
-                    </div>
-                </div>
-                <div className="checkOut">
-                    <span className="text-gray-500 text-sm font-medium">CHECK-OUT</span>
-                    <div>
-                        <span className="text-black text-3xl font-bold mr-8">Sun, Feb 12</span>
-                        <i className="fas fa-calendar-alt fa-2x"></i>
-                    </div>
-                </div>
-            </div>
-
-            {/* <!-- Room & Guests --> */}
-            <div className="box bg-white border border-gray-300 rounded-xl flex flex-col justify-center px-8"
-                styles="width: 35%;">
-                <span className="text-gray-500 text-sm font-medium">ROOM AND GUESTS</span>
-                <div>
-                    <span className="text-black text-3xl font-bold mr-6">1 Room, 2 Adults, 1 Child</span>
-                    <i className="fas fas fa-angle-down fa-2x"></i>
-                </div>
-            </div>
-            {/* <!-- Search btn --> */}
+    {/* <!-- Check-In & Check-Out --> */}
+    <div className="border border-gray-2 rounded-2xl flex items-center justify-between px-8 w-2/5 h-full">
+      <div className="checkIn">
+        <span className="text-gray-1 text-sm font-medium">CHECK-IN</span>
+        <div>
+          <span className="text-black text-3xl font-bold mr-8">
+            Sat, Feb 11
+          </span>
+          <i className="fas fa-calendar-alt fa-2x"></i>
         </div>
-            <button className="bg-black h-16 w-56 rounded-xl right-4 justify-center flex items-center ml-[1040px] mt-[20px]">
-                <span className="text-white font-light mr-5">Search Hotels</span>
-                <i className="fas fa-angle-right text-white"></i>
-            </button>
-    </nav>
-)
+      </div>
+      <div className="checkOut">
+        <span className="text-gray-1 text-sm font-medium">CHECK-OUT</span>
+        <div>
+          <span className="text-black text-3xl font-bold mr-8">
+            Sun, Feb 12
+          </span>
+          <i className="fas fa-calendar-alt fa-2x"></i>
+        </div>
+      </div>
+    </div>
 
+    {/* <!-- Room & Guests --> */}
+    <div className="bg-white border border-gray-2 rounded-2xl flex flex-col justify-center px-8 w-2/5 h-full">
+      <span className="text-gray-1 text-sm font-medium">ROOM AND GUESTS</span>
+      <div>
+        <span className="text-black text-3xl font-bold mr-6">
+          1 Room, 2 Adults, 1 Child
+        </span>
+        <i className="fas fas fa-angle-down fa-2x"></i>
+      </div>
+    </div>
+    {/* <!-- Search btn --> */}
+    <button className="bg-black border h-16 w-56 rounded-2xl absolute -bottom-10 right-8 z-30 ml-[1040px] mt-[20px]">
+      <span className="text-white font-light mr-5">Search Hotels</span>
+      <i className="fas fa-angle-right text-white"></i>
+    </button>
+  </div>
+);
 
-export default HotelSearch
+export default HotelSearch;
