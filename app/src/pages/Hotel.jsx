@@ -11,7 +11,7 @@ const Hotel = () => {
       <div className="container mx-auto flex flex-row justify-center items-center mt-[120px] relative">
         <HotelSearch />
       </div>
-      <div className="container mx-auto flex gap-10 mt-[140px]">
+      <div className="container mx-auto flex gap-10 mt-40">
         {/* ------------------- filter ------------------- */}
 
         <div className="flex flex-col w-[300px]">
