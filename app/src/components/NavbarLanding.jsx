@@ -3,7 +3,12 @@ import { useState } from "react";
 const Navbar = () => (
   <nav className="w-full ">
     {/*                           BG                           */}
-    <section class="bgImage absolute h-48"></section>
+    <section className="bgImage absolute h-5/6">
+      <div class="container mx-auto mt-6 flex flex-col justify-center h-4/5">
+        <span class="text-7xl font-medium">Find And Book</span>
+        <span class="text-7xl font-light mt-5">A Great Experience</span>
+      </div>
+    </section>
 
     {/*                      logo / menu                       */}
     <div className="container flex flex-row items-center justify-between mx-auto pt-8">
@@ -45,11 +50,24 @@ const Navbar = () => (
       </div>
 
       {/*                         profile card                            */}
-      <div className="flex items-center md:order-2 z-10">
+      {/* <div className="flex items-center md:order-2 z-10">
         <span className="text-base font-medium mr-5">Hi, Member Name</span>
         <button className="flex mr-3 text-sm md:mr-0">
           <div className="block bg-black rounded-lg h-10 w-10"></div>
         </button>
+      </div> */}
+
+      {/*                         sign in/ sign up                        */}
+      <div class="flex items-center md:order-2 z-10 space-x-12">
+        <a
+          href="#"
+          class="md:p-0 text-gray-600 md:hover:bg-transparent md:hover:text-black font-medium"
+        >
+          Sign In
+        </a>
+        <a href="#" class="py-2 px-5 rounded-xl text-white bg-black font-light">
+          Sign Up
+        </a>
       </div>
     </div>
   </nav>
