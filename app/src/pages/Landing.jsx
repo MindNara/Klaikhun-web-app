@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/NavbarLanding";
+import ImgLanding from "../assets/ImgLanding.png";
 import { HotelSearch, FlightSearch } from "../components/index";
 
 const Landing = () => (
@@ -42,12 +43,18 @@ const Landing = () => (
       </div>
 
       {/* <!-- Images --> */}
-      <div className="img">
-        <div className="bg-black w-full h-72 rounded-3xl"></div>
-      </div>
+      <section className="relative w-full h-72">
+        <img src={ImgLanding} alt="ImgLanding" className="absolute rounded-3xl h-full"/>
+        <div className="relative flex flex-col items-end justify-center px-20 h-full">
+          <span class="text-5xl font-medium">Enjoy Your</span>
+          <span class="text-5xl font-light">Dream Vacation</span>
+        </div>
+      </section>
 
       <div className="topdestinations">
-        <span className="font-medium text-3xl">Top destinations in Thailand</span>
+        <span className="font-medium text-3xl">
+          Top destinations in Thailand
+        </span>
         <div className="flex justify-between space-x-5 py-10">
           <div className="relative bg-gray-3 w-1/3 h-64 rounded-3xl shadow-lg">
             <div className="absolute bg-white w-full h-24 rounded-3xl bottom-0"></div>

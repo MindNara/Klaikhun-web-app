@@ -21,6 +21,7 @@ body {
     background: url(assets/BGLanding.png);
 }
 
-.booking .box {
-    height: 100%;
+.imgLanding {
+    width: 100%;
+    background: url(assets/ImgLanding.png);
 }
