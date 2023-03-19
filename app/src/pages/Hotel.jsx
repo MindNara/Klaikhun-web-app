@@ -1,10 +1,14 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 import { HotelSearch } from "../components/index";
 
 const Hotel = () => {
   return (
     <>
-      <div className="flex">
+      <div className="flex justify-center items-center">
+        <Navbar />
+      </div>
+      <div className="container mx-auto mt-10 relative">
         <HotelSearch />
       </div>
       <div className="flex gap-10">
