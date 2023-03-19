@@ -5,13 +5,13 @@ import { HotelSearch } from "../components/index";
 const Hotel = () => {
   return (
     <>
-      <div className="flex justify-center items-center">
+      <div className="flex flex-row justify-center items-center">
         <Navbar />
       </div>
-      <div className="container mx-auto mt-10 relative">
+      <div className="flex flex-row justify-center items-center mt-[120px] mx-[50px] relative">
         <HotelSearch />
       </div>
-      <div className="flex gap-10">
+      <div className="flex gap-10 mt-[150px]">
 
         {/* ------------------- filter ------------------- */}
 
