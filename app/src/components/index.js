@@ -1,11 +1,5 @@
-import Navbar from './Navbar'
-import HotelSearch from './HotelSearch'
-import FlightSearch from './FlightSearch'
+import Navbar from "./NavbarLanding";
+import HotelSearch from "./HotelSearch";
+import FlightSearch from "./FlightSearch";
 
-
-
-export {
-    Navbar,
-    HotelSearch,
-    FlightSearch
-};
+export { Navbar, HotelSearch, FlightSearch };
