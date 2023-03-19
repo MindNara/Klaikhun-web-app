@@ -12,7 +12,9 @@ module.exports = {
         '4': '#FEFEFE',
         '5': '#A0A1A3'
       },
-      'skyblue': '#DFF2FF'
+      'skyblue': '#DFF2FF',
+      'white': '#FFFFFF',
+      'black': '#000000'
     },
     extend: {},
   },
