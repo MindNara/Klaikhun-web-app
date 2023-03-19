@@ -13,8 +13,8 @@ module.exports = {
         '5': '#A0A1A3'
       },
       'skyblue': '#DFF2FF',
-      'black': '#000',
-      'white': '#fff'
+      'white': '#FFFFFF',
+      'black': '#000000'
     },
     extend: {},
   },

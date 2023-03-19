@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Landing, Hotel, Flight } from "./pages/index";
+import { Landing, Hotel, Flight } from './pages/index';
+import Footer from './components/Footer'
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,6 +15,9 @@ function App() {
           <Route path="/hotels" element={<Hotel />} />
           <Route path="/flights" element={<Flight />} />
         </Routes>
+      </div>
+      <div className="flex justify-center items-center mt-10">
+        <Footer />
       </div>
     </div>
   );
