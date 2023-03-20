@@ -31,8 +31,11 @@ const HotelCard = () => {
         <h1 className="mt-1 text-gray-1 text-sm font-light">
           <i class="fa-solid fa-location-dot mr-2"></i>location
         </h1>
-        <div className="flex justify-end mt-10">
-          <div>
+        <div className="flex justify-between mt-3">
+          <div className="w-3/5 h-[125px] bg-gradient-to-r from-gray-3 to-white-0% rounded-lg p-5">
+            <h1 className="text-gray-1">This is Description</h1>
+          </div>
+          <div className="w-fit mt-8">
             <h1 className="text-2xl font-semibold flex justify-end">
               THB 1,200
             </h1>
