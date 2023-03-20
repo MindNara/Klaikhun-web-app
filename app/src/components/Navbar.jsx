@@ -3,7 +3,7 @@ import { useState } from "react";
 const Navbar = () => (
   <nav className="w-full ">
     {/*                           BG                           */}
-    <section className="bgImage absolute h-48"></section>
+    <section class="bgImage absolute h-48"></section>
 
     {/*                      logo / menu                       */}
     <div className="container flex flex-row items-center justify-between mx-auto pt-8">

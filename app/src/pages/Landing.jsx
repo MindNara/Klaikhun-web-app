@@ -1,31 +1,46 @@
 import React from "react";
+import { useState } from "react";
 import Navbar from "../components/NavbarLanding";
 import ImgLanding from "../assets/ImgLanding.png";
 import { HotelSearch, FlightSearch } from "../components/index";
 
-const Landing = () => (
+
+
+const Landing = () => {
+  const [showComponent1, setShowComponent1] = useState(true);
+  
+  const handleClick1 = () => {
+    setShowComponent1(true);
+  };
+  
+  const handleClick2 = () => {
+    setShowComponent1(false);
+  };
+  return (
   <div>
     <div className="flex justify-center items-center">
       <Navbar />
     </div>
-    <div className="container mx-auto mt-10 relative h-[70vh]">
-      <div className="absolute flex bottom-[100px]">
-        {/* <!-- Hotels --> */}
-        <button className="h-16 w-56 rounded-tl-3xl bg-white">
-          <i className="fa-sharp fa-solid fa-hotel text-black mr-3"></i>
-          <span className="text-black text-lg font-medium">Hotels</span>
-        </button>
+    <div className="container mx-auto relative ">
+      <div className="flex mt-[550px]">
+        <div className="relative bottom-[100px]">
+          {/* <!-- Hotels --> */}
+          <button onClick={handleClick1} className="h-16 w-56 rounded-tl-3xl bg-white">
+            <i class="fa-sharp fa-solid fa-hotel text-black mr-3"></i>
+            <span className="text-black text-lg font-medium">Hotels</span>
+          </button>
 
-        {/* <!-- Flights --> */}
-        <button className="h-16 w-56 rounded-tr-3xl bg-black opacity-90">
-          <i className="fa-solid fa-plane-departure text-white mr-3"></i>
-          <span className="text-white text-lg">Flights</span>
-        </button>
+          {/* <!-- Flights --> */}
+          <button onClick={handleClick2} className="h-16 w-56 rounded-tr-3xl bg-black opacity-90">
+            <i class="fa-solid fa-plane-departure text-white mr-3"></i>
+            <span className="text-white text-lg">Flights</span>
+          </button>
+        </div>
       </div>
 
-      <div className="absolute bottom-28 w-full">
-        <HotelSearch />
-        {/* <FlightSearch /> */}
+      <div className="relative bottom-28 w-full">
+        {/* Selection between <HotelSearch/> and <FlightSearch /> */}
+        {showComponent1 ? <HotelSearch/> : <FlightSearch />}
       </div>
     </div>
 
@@ -46,8 +61,8 @@ const Landing = () => (
       <section className="relative w-full h-72">
         <img src={ImgLanding} alt="ImgLanding" className="absolute rounded-3xl h-full"/>
         <div className="relative flex flex-col items-end justify-center px-20 h-full">
-          <span class="text-5xl font-medium">Enjoy Your</span>
-          <span class="text-5xl font-light">Dream Vacation</span>
+          <span className="text-5xl font-medium">Enjoy Your</span>
+          <span className="text-5xl font-light">Dream Vacation</span>
         </div>
       </section>
 
@@ -91,6 +106,6 @@ const Landing = () => (
       </div>
     </div>
   </div>
-);
+)}
 
 export default Landing;

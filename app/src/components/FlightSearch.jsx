@@ -1,7 +1,7 @@
 import React from "react";
 
 const FlightSearch = () => (
-  <div className="bg-white rounded-xl shadow-lg h-48 flex flex-col px-8 py-5 space-y-3 w-full">
+  <div className="bg-white rounded-xl shadow-lg h-48 flex flex-col px-8 py-5 space-y-3 w-full absolute">
     <div className="flex">
       <span className=" mr-3">01 Passengers</span>
       <a href="#">
