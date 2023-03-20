@@ -13,7 +13,7 @@ const HotelSearch = () => (
       <div className="checkIn">
         <span className="text-gray-1 text-sm">CHECK-IN</span>
         <div>
-          <span className="text-black text-3xl font-semibold mr-8">
+          <span className="text-black text-3xl font-semibold mr-4">
             Sat, Feb 11
           </span>
           <i className="fas fa-calendar-alt fa-2x"></i>
@@ -22,10 +22,10 @@ const HotelSearch = () => (
       <div className="checkOut">
         <span className="text-gray-1 text-sm">CHECK-OUT</span>
         <div>
-          <span className="text-black text-3xl font-semibold mr-8">
+          <span className="text-black text-3xl font-semibold mr-4">
             Sun, Feb 12
           </span>
-          <i className="fas fas fa-angle-down fa-2x"></i>
+          <i className="fas fas fa-calendar-alt fa-2x"></i>
         </div>
       </div>
       {/* <!-- Search btn --> */}
