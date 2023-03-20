@@ -8,11 +8,11 @@ const Flight = () => {
       <div className="flex justify-center items-center">
         <Navbar />
       </div>
-      <div className="container mx-auto mt-10 relative">
+      <div className="container mx-auto flex flex-row justify-center items-center mt-[130px] relative">
         <FlightSearch />
       </div>
 
-      <div className="container mx-auto flex gap-10 mt-20">
+      <div className="container mx-auto flex gap-10 mt-40">
         {/* ------------------- filter ------------------- */}
 
         <div className="flex flex-col w-[300px]">

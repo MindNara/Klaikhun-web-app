@@ -3,6 +3,8 @@ import HotelSearch from './HotelSearch'
 import FlightSearch from './FlightSearch'
 import Footer from './Footer'
 import HotelCard  from './HotelCard'
+import TopDesCard from './TopDesCard'
+import ExploreHotelCard from './ExploreHotelCard'
 
 
 
@@ -11,5 +13,7 @@ export {
     HotelSearch,
     FlightSearch,
     Footer,
-    HotelCard
+    HotelCard,
+    TopDesCard,
+    ExploreHotelCard
 };
