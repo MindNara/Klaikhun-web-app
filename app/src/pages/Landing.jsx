@@ -7,14 +7,15 @@ import { HotelSearch, FlightSearch } from "../components/index";
 
 
 const Landing = () => {
-  const [showComponent1, setShowComponent1] = useState(true);
+  
+  const [showHotel, setShowHotel] = useState(false);
   
   const handleClick1 = () => {
-    setShowComponent1(true);
+    setShowHotel(false);
   };
   
   const handleClick2 = () => {
-    setShowComponent1(false);
+    setShowHotel(true);
   };
   return (
   <div>
@@ -25,22 +26,22 @@ const Landing = () => {
       <div className="flex mt-[550px]">
         <div className="relative bottom-[100px]">
           {/* <!-- Hotels --> */}
-          <button onClick={handleClick1} className="h-16 w-56 rounded-tl-3xl bg-white">
-            <i class="fa-sharp fa-solid fa-hotel text-black mr-3"></i>
-            <span className="text-black text-lg font-medium">Hotels</span>
+          <button onClick={handleClick1} className={`h-16 w-56 rounded-tl-3xl  ${showHotel ? "bg-white" : "bg-black"}`}>
+            <i class={`fa-sharp fa-solid fa-hotel mr-3 ${showHotel ? "text-black" : "text-white"}`}></i>
+            <span className={`${showHotel ? "text-black" : "text-white"} text-lg font-medium`}>Hotels</span>
           </button>
 
           {/* <!-- Flights --> */}
-          <button onClick={handleClick2} className="h-16 w-56 rounded-tr-3xl bg-black opacity-90">
-            <i class="fa-solid fa-plane-departure text-white mr-3"></i>
-            <span className="text-white text-lg">Flights</span>
+          <button onClick={handleClick2} className={`h-16 w-56 rounded-tr-3xl ${showHotel ? "bg-black" : "bg-white"}`}>
+            <i class={`fa-solid fa-plane-departure mr-3 ${showHotel ? "text-white" : "text-black"}`}></i>
+            <span className={`${showHotel ? "text-white" : "text-black"} text-lg font-medium`}>Flights</span>
           </button>
         </div>
       </div>
 
       <div className="relative bottom-28 w-full">
         {/* Selection between <HotelSearch/> and <FlightSearch /> */}
-        {showComponent1 ? <HotelSearch/> : <FlightSearch />}
+        {showHotel ? <HotelSearch/> : <FlightSearch />}
       </div>
     </div>
 
