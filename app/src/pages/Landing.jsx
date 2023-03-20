@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Navbar from "../components/NavbarLanding";
 import ImgLanding from "../assets/ImgLanding.png";
-import { HotelSearch, FlightSearch, TopDesCard, ExploreHotelCard } from "../components/index";
+import { HotelSearch, FlightSearch, TopDesCard, ExploreHotelCard, DealCard } from "../components/index";
 
 const Landing = () => {
   const [showHotel, setShowHotel] = useState(true);
@@ -78,10 +78,8 @@ const Landing = () => {
           <span className="font-medium text-4xl flex justify-center">
             Accommodation Promotions
           </span>
-          <div className="flex justify-between space-x-5 py-10">
-            <div className="bg-gray-3 w-1/3 h-52 rounded-3xl"></div>
-            <div className="bg-black w-1/3 h-52 rounded-3xl"></div>
-            <div className="bg-gray-3 w-1/3 h-52 rounded-3xl"></div>
+          <div className="flex flex-wrap space-x-5 py-10">
+            <DealCard></DealCard>
           </div>
         </div>
 
