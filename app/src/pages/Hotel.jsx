@@ -1,14 +1,14 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { HotelSearch } from "../components/index";
+import { HotelSearch, HotelCard } from "../components/index";
 
 const Hotel = () => {
   return (
     <>
-      <div className="flex flex-row justify-center items-center">
+      <div className="flex justify-center items-center">
         <Navbar />
       </div>
-      <div className="container mx-auto flex flex-row justify-center items-center mt-[120px] relative">
+      <div className="container mx-auto flex flex-row justify-center items-center mt-[130px] relative">
         <HotelSearch />
       </div>
       <div className="container mx-auto flex gap-10 mt-40">
@@ -163,27 +163,30 @@ const Hotel = () => {
               <div>
                 <input type="radio" name="guest" />
                 <label className="text-gray-1 ml-2" for="four">
-                  Prachin Buri
+                  Chon Buri
                 </label>
               </div>
               <div>
                 <input type="radio" name="guest" />
                 <label className="text-gray-1 ml-2" for="three">
-                  7+ Very Good
+                  Khao Yai
                 </label>
               </div>
               <div>
                 <input type="radio" name="guest" />
                 <label className="text-gray-1 ml-2" for="two">
-                  6+ Good
+                  Prachin Buri
                 </label>
               </div>
             </form>
           </div>
         </div>
 
-        <div className="flex-col">
+        <div className="flex flex-col w-full">
           <h1 className="text-xl">Showing 123 search results</h1>
+          <div className="mt-8 w-full">
+            <HotelCard></HotelCard>
+          </div>
         </div>
       </div>
     </>
