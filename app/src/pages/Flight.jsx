@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { FlightSearch } from "../components/index";
+import { FlightSearch, FlightCard } from "../components/index";
 
 const Flight = () => {
   return (
@@ -81,6 +81,9 @@ const Flight = () => {
 
         <div className="flex-col">
           <h1 className="text-xl">Showing 119 search results</h1>
+          <FlightCard />
+          <FlightCard /><FlightCard />
+          <FlightCard /><FlightCard />
         </div>
       </div>
     </>

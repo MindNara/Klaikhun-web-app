@@ -6,7 +6,7 @@ import HotelCard  from './HotelCard'
 import TopDesCard from './TopDesCard'
 import ExploreHotelCard from './ExploreHotelCard'
 import DealCard from './DealCard'
-
+import FlightCard from './FlightCard'
 
 
 export {
@@ -15,6 +15,7 @@ export {
     FlightSearch,
     Footer,
     HotelCard,
+    FlightCard,
     TopDesCard,
     ExploreHotelCard,
     DealCard
