@@ -5,6 +5,7 @@ import Footer from './Footer'
 import HotelCard  from './HotelCard'
 import TopDesCard from './TopDesCard'
 import ExploreHotelCard from './ExploreHotelCard'
+import DealCard from './DealCard'
 
 
 
@@ -15,5 +16,6 @@ export {
     Footer,
     HotelCard,
     TopDesCard,
-    ExploreHotelCard
+    ExploreHotelCard,
+    DealCard
 };
