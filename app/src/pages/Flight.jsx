@@ -79,7 +79,7 @@ const Flight = () => {
           </div>
         </div>
 
-        <div className="flex-col">
+        <div className="flex-col w-full">
           <h1 className="text-xl">Showing 119 search results</h1>
           <FlightCard />
           <FlightCard /><FlightCard />
