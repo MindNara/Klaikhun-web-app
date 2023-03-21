@@ -5,7 +5,7 @@ const Navbar = () => (
   <nav className="w-full ">
     {/*                           BG                           */}
     <section className="absolute h-screen w-full">
-    <img src={BGLanding} alt="ImgLanding" class="absolute w-full h-4/5 max-2xl:h-5/6"/>
+      <img src={BGLanding} alt="ImgLanding" class="absolute w-full h-4/5 max-2xl:h-5/6" />
       <div class="relative container mx-auto mt-6 flex flex-col justify-center h-4/6">
         <span class="text-7xl max-2xl:text-6xl font-medium">Find And Book</span>
         <span class="text-7xl max-2xl:text-6xl font-light mt-2">A Great Experience</span>
