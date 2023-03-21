@@ -11,7 +11,7 @@ const Deal = () => {
       <div className="container mx-auto my-24 mt-[180px] flex flex-col justify-center items-center">
         <h1 className="text-4xl font-medium mb-16">Today's Top Deals</h1>
         <div className="flex flex-nowrap w-full gap-8">
-          <DealCard></DealCard>
+          <DealCard />
         </div>
       </div>
     </>

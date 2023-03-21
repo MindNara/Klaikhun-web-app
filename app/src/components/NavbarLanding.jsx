@@ -62,7 +62,7 @@ const Navbar = () => (
       {/*                         sign in/ sign up                        */}
       <div class="flex items-center md:order-2 z-10 space-x-12">
         <a
-          href="#"
+          href="/Signin"
           class="md:p-0 text-gray-600 md:hover:bg-transparent md:hover:text-black font-medium"
         >
           Sign In
