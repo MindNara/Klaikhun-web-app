@@ -4,6 +4,7 @@ import Flight from './Flight';
 import Deal from './Deal';
 import Profile from './Profile';
 import Signin from './Signin';
+import HotelDetail from './HotelDetail';
 
 export {
     Landing,
@@ -11,5 +12,6 @@ export {
     Flight,
     Deal,
     Profile,
-    Signin
+    Signin,
+    HotelDetail
 }

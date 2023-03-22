@@ -7,6 +7,7 @@ import TopDesCard from './TopDesCard'
 import ExploreHotelCard from './ExploreHotelCard'
 import DealCard from './DealCard'
 import FlightCard from './FlightCard'
+import HotelDetailCard from './HotelDetailCard'
 
 
 export {
@@ -18,5 +19,6 @@ export {
     FlightCard,
     TopDesCard,
     ExploreHotelCard,
-    DealCard
+    DealCard,
+    HotelDetailCard
 };

@@ -3,11 +3,15 @@ import React from "react";
 const HotelCard = () => {
   return (
     <div className="bg-white drop-shadow-lg rounded-2xl w-full h-[240px] flex">
-      <div className="bg-gray-3 h-full aspect-square rounded-2xl"></div>
+      <a href="/hotels/detail">
+        <div className="bg-gray-3 h-full aspect-square rounded-2xl">
+
+        </div>
+      </a>
       <div className="mx-3 p-5 w-full">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="text-2xl">
+            <a href="/hotels/detail" className="text-2xl hover:underline">
               Hotel Name
             </a>
             <h1 className="ml-5 text-sm">
@@ -24,7 +28,7 @@ const HotelCard = () => {
               <div className="text-gray-1 text-sm font-light">100+ reviews</div>
             </div>
             <div className="bg-black text-white text-xl aspect-square rounded-lg h-10 flex items-center justify-center ml-4">
-                5
+              5
             </div>
           </div>
         </div>

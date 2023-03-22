@@ -3,7 +3,7 @@ import React from "react";
 const HotelSearch = () => (
   <div className="bg-white rounded-2xl shadow-lg h-44 flex flex-row items-center justify-between p-8 space-x-5 absolute w-full">
     {/* <!-- Destination --> */}
-    <div className="bg-white border border-gray-2 rounded-2xl flex flex-col justify-center px-8 w-2/5 h-full">
+    <div className="bg-white border border-gray-2 rounded-2xl flex flex-col justify-center px-8 w-3/5 h-full">
       <span className="text-gray-1 text-sm">DESTINATION</span>
       <span className="text-black text-3xl font-semibold">Bangkok</span>
     </div>
@@ -36,7 +36,7 @@ const HotelSearch = () => (
       <span className="text-gray-1 text-sm">ROOM AND GUESTS</span>
       <div>
         <span className="text-black text-3xl font-semibold mr-6">
-          1 Room, 2 Adults, 1 Child
+          1 Room, 2 Persons
         </span>
         <i className="fas fas fa-angle-down fa-2x"></i>
       </div>
