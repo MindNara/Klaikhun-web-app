@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Landing, Hotel, Flight, Deal, Profile, Signin, HotelDetail } from './pages/index';
+import { Landing, Hotel, Flight, Deal, Profile, Signin, HotelDetail, CheckOut} from './pages/index';
 import Footer from './components/Footer'
 
 
@@ -16,6 +16,7 @@ function App() {
           <Route path="/deals" element={<Deal />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/signin" element={<Signin />} />
+          <Route path="/checks" element={<CheckOut />} />
         </Routes>
       </div>
       <div className="flex justify-center items-center mt-10">

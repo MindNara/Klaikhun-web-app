@@ -14,7 +14,7 @@ const FlightCard = () => (
             <div className='w-[400px] justify-center items-center py-5'>
                 <div className='w-full h-[100px] items-center justify-center flex flex-row mt-2'>
                     <i className='fa-solid fa-circle text-gray-2' />
-                    <div className='w-[120px] h-0.5 bg-gray-2' />
+                    <div className='w-[120px] h-1 bg-gray-2' />
                     <i class="fa fa-plane px-5 text-3xl text-gray-2" />
                     <div className='w-[120px] h-1 bg-gray-2' />
                     <i className='fa-solid fa-circle text-gray-2' />

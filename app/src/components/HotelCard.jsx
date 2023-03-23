@@ -44,7 +44,7 @@ const HotelCard = () => {
               THB 1,200
             </h1>
             <button className="bg-black text-white text-lg rounded-xl p-2 px-5 mt-2">
-              Reserve Room
+              <a href="/hotels/detail">Reserve Room</a>
             </button>
           </div>
         </div>

@@ -8,7 +8,8 @@ import ExploreHotelCard from './ExploreHotelCard'
 import DealCard from './DealCard'
 import FlightCard from './FlightCard'
 import HotelDetailCard from './HotelDetailCard'
-
+import CheckOutButton from './CheckOutButton'
+import CheckOutInfo from './CheckOutInfo'
 
 export {
     Navbar,
@@ -20,5 +21,7 @@ export {
     TopDesCard,
     ExploreHotelCard,
     DealCard,
-    HotelDetailCard
+    HotelDetailCard,
+    CheckOutButton,
+    CheckOutInfo
 };
