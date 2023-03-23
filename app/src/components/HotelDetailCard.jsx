@@ -20,7 +20,7 @@ const HotelDetailCard = () => {
                     <input
                         className="border border-solid border-gray-5 rounded-3xl p-3 px-5 text-gray-1 mt-4 w-full"
                         type="date"
-                        name="checkPut"
+                        name="checkOut"
                     />
                 </div>
             </div>

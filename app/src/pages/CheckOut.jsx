@@ -9,7 +9,7 @@ const CheckOut = () => {
       </div>
       <div className='my-24'>
       <CheckOutButton />
-      <div className='flex'>
+      <div className='flex justify-center'>
       <CheckOutInfo />
       <CheckOutCard />
       </div>
