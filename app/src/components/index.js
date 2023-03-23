@@ -10,6 +10,8 @@ import FlightCard from './FlightCard'
 import HotelDetailCard from './HotelDetailCard'
 import CheckOutButton from './CheckOutButton'
 import CheckOutInfo from './CheckOutInfo'
+import CheckOutCard from './CheckOutCard'
+import CheckOutConfirm from './CheckOutConfirm'
 
 export {
     Navbar,
@@ -23,5 +25,7 @@ export {
     DealCard,
     HotelDetailCard,
     CheckOutButton,
-    CheckOutInfo
+    CheckOutInfo,
+    CheckOutCard,
+    CheckOutConfirm
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, CheckOutButton, CheckOutInfo } from '../components'
+import { Navbar, CheckOutButton, CheckOutInfo, CheckOutCard, CheckOutConfirm } from '../components'
 
 const CheckOut = () => {
   return (
@@ -9,7 +9,13 @@ const CheckOut = () => {
       </div>
       <div className='my-24'>
       <CheckOutButton />
+      <div className='flex'>
       <CheckOutInfo />
+      <CheckOutCard />
+      </div>
+      <div>
+        <CheckOutConfirm />
+      </div>
       </div>
     </div>
   )

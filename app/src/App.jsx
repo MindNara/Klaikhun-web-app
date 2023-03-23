@@ -11,12 +11,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/hotels" element={<Hotel />} />
-          <Route path="/hotels/detail" element={<HotelDetail />} />
+          <Route path="/hotels/:hotelId" element={<HotelDetail />} />
           <Route path="/flights" element={<Flight />} />
           <Route path="/deals" element={<Deal />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/checks" element={<CheckOut />} />
+          <Route path="/check-out" element={<CheckOut />} />
         </Routes>
       </div>
       <div className="flex justify-center items-center mt-10">
