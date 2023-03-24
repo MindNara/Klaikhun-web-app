@@ -1,6 +1,14 @@
-import React from "react";
+import { React, useContext } from "react";
+import { statusContext } from "./status";
 
-const CheckOutCard = () => {
+export default function CheckOutCard() {
+
+    const [status, setStatus] = useContext(statusContext)
+
+    const updateStatus = () => {
+        setStatus(1) 
+    }
+
     return (
         <div className="border border-gray-2 rounded-[40px] h-full px-10 py-14 m-16">
             <div className="flex w-full justify-between items-center gap-10">
@@ -79,10 +87,11 @@ const CheckOutCard = () => {
             </div>
 
             <div className="w-full mt-10 gap-10">
-                <a href="/check-out" className="flex justify-center w-full bg-black text-white font-light rounded-2xl py-4">Check Out</a>
+                <button onClick={updateStatus} className="flex justify-center w-full bg-black text-white font-light rounded-2xl py-4">
+                    {status === 0 && "Check Out"}
+                    {status === 1 && <a href="/confirmed">Book Now!</a>}
+                </button>
             </div>
         </div>
     )
 }
-
-export default CheckOutCard

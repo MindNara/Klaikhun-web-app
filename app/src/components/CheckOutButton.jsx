@@ -1,23 +1,14 @@
-import { React, useState } from 'react'
-
+import { React, useContext } from 'react'
+import { statusContext } from './status'
 const CheckOutButton = () =>  {
-    const [White, setWhite] = useState(1)
-    const Click1 = () => {
-        setWhite(1)
-    }
-    const Click2 = () => {
-        setWhite(2)
-    }
-    const Click3 = () => {
-        setWhite(3)
-    }
+    const [status] = useContext(statusContext)
     
     return (
         <div className='w-full flex justify-center items-center relative'>
             <div className='flex flex-row h-20 bg-black text-white w-full'>
-                <button onClick={Click1} className={`${White === 1 && "bg-white text-black"} text-xl w-1/3`}>Customer Information</button>
-                <button onClick={Click2} className={`${White === 2 && "bg-white text-black"} text-xl w-1/3`}>Payment Information</button>
-                <button onClick={Click3} className={`${White === 3 && "bg-white text-black"} text-xl w-1/3`}>Booking is Confirmed</button>
+                <div className={`${status === 0 && "bg-white text-black"} text-center text-xl pt-6 w-1/3`}>Customer Information</div>
+                <div className={`${status === 1 && "bg-white text-black"} text-center text-xl pt-6 w-1/3`}>Payment Information</div>
+                <div className={`text-center text-xl pt-6 w-1/3`}>Booking is Confirmed</div>
             </div>
         </div>
     )   

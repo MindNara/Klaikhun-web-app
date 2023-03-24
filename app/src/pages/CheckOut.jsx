@@ -1,23 +1,24 @@
-import React from 'react'
-import { Navbar, CheckOutButton, CheckOutInfo, CheckOutCard, CheckOutConfirm } from '../components'
+import { React, useState } from 'react'
+import { Navbar, CheckOutInfo, CheckOutCard, CheckOutButton } from '../components'
+import { statusContext } from '../components/status'
 
-const CheckOut = () => {
-  return (
-    <div>
-      <div>
+
+function CheckOut() {
+  const [status, setStatus] = useState(0)
+
+
+  return (    
+    <statusContext.Provider value={[status, setStatus]}>
         <Navbar />
-      </div>
       <div className='my-24'>
-      <CheckOutButton />
+        <CheckOutButton />
       <div className='flex justify-center'>
-      <CheckOutInfo />
-      <CheckOutCard />
-      </div>
-      <div>
-        <CheckOutConfirm />
+        {status === 0 && <CheckOutInfo />}
+        {status === 1 && "Payment"}
+        <CheckOutCard />
       </div>
       </div>
-    </div>
+    </statusContext.Provider>
   )
 }
 

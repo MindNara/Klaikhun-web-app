@@ -6,6 +6,7 @@ import Profile from './Profile';
 import Signin from './Signin';
 import HotelDetail from './HotelDetail';
 import CheckOut from './CheckOut';
+import Confirm from './confirm';
 
 export {
     Landing,
@@ -15,5 +16,6 @@ export {
     Profile,
     Signin,
     HotelDetail,
-    CheckOut
+    CheckOut,
+    Confirm
 }
