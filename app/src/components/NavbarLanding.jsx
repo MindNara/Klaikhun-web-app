@@ -67,7 +67,7 @@ const Navbar = () => (
         >
           Sign In
         </a>
-        <a href="#" class="py-2 px-5 rounded-xl text-white bg-black font-light">
+        <a href="/Signup" class="py-2 px-5 rounded-xl text-white bg-black font-light">
           Sign Up
         </a>
       </div>
