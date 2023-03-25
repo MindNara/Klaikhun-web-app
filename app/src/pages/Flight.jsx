@@ -82,8 +82,6 @@ const Flight = () => {
         <div className="flex-col w-full">
           <h1 className="text-xl">Showing 119 search results</h1>
           <FlightCard />
-          <FlightCard /><FlightCard />
-          <FlightCard /><FlightCard />
         </div>
       </div>
     </>

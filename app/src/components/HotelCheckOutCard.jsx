@@ -1,7 +1,7 @@
 import { React, useContext } from "react";
 import { statusContext } from "./status";
 
-export default function CheckOutCard() {
+export default function HotelCheckOutCard() {
   const [status, setStatus] = useContext(statusContext);
 
   const updateStatus = () => {

@@ -10,7 +10,8 @@ import FlightCard from './FlightCard'
 import HotelDetailCard from './HotelDetailCard'
 import CheckOutButton from './CheckOutButton'
 import CheckOutInfo from './CheckOutInfo'
-import CheckOutCard from './CheckOutCard'
+import HotelCheckOutCard from './HotelCheckOutCard'
+import FlightCheckOutCard from './FlightCheckOutCard'
 import CheckOutConfirm from './CheckOutConfirm'
 
 export {
@@ -26,6 +27,7 @@ export {
     HotelDetailCard,
     CheckOutButton,
     CheckOutInfo,
-    CheckOutCard,
-    CheckOutConfirm
+    HotelCheckOutCard,
+    CheckOutConfirm,
+    FlightCheckOutCard
 };

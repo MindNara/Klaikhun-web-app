@@ -185,7 +185,7 @@ const Hotel = () => {
         <div className="flex flex-col w-full">
           <h1 className="text-xl">Showing 123 search results</h1>
           <div className="my-8 w-full">
-            <HotelCard></HotelCard>
+            <HotelCard />
           </div>
         </div>
       </div>

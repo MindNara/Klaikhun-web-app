@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Landing, Hotel, Flight, Deal, Profile, Signin, HotelDetail, CheckOut, Confirm} from './pages/index';
+import { Landing, Hotel, Flight, Deal, Profile, Signin, HotelDetail, CheckOut, Confirm } from './pages/index';
 import Footer from './components/Footer'
 
 
