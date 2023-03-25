@@ -27,7 +27,7 @@ const FlightCard = () => (
             </div>
             <div className='flex flex-col justify-center items-center'>
                 <div className='text-black font-bold text-center text-2xl mb-1'>THB1,690</div>
-                <a href='/check-out' className='bg-black rounded-lg py-3 px-8'>
+                <a href='/flightCheck' className='bg-black rounded-lg py-3 px-8'>
                     <h4 className='text-center text-white font-medium text-lg'>
                         Book
                     </h4></a>

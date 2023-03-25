@@ -5,9 +5,10 @@ import Deal from './Deal';
 import Profile from './Profile';
 import Signin from './Signin';
 import HotelDetail from './HotelDetail';
-import CheckOut from './CheckOut';
+import HotelCheckOut from './HotelCheckOut';
 import Confirm from './confirm';
 import Signup from './Signup';
+import FlightCheckOut from './FlightCheckOut'
 
 export {
     Landing,
@@ -17,7 +18,8 @@ export {
     Profile,
     Signin,
     HotelDetail,
-    CheckOut,
+    HotelCheckOut,
     Confirm,
-    Signup
+    Signup,
+    FlightCheckOut
 }
