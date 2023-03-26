@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { Navbar, CheckOutInfo, FlightCheckOutCard, CheckOutButton } from '../components'
+import { Navbar, CheckOutInfo, FlightCheckOutCard, CheckOutButton, PaymentInfo } from '../components'
 import { statusContext } from '../components/status'
 
 
@@ -13,7 +13,7 @@ function CheckOut() {
         <CheckOutButton />
         <div className='flex justify-center'>
           {status === 0 && <CheckOutInfo />}
-          {status === 1 && "Payment"}
+          {status === 1 && <PaymentInfo />}
           <FlightCheckOutCard />
         </div>
       </div>

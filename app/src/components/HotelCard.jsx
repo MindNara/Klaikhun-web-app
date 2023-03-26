@@ -1,18 +1,20 @@
 import React from "react";
 
-const HotelCard = () => {
+const HotelCard = ({ hotel }) => {
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   return (
     <div className="bg-white drop-shadow-lg rounded-2xl w-full h-[240px] flex">
       <a href="/hotels/detail">
-        <div className="bg-gray-3 h-full aspect-square rounded-2xl">
-
-        </div>
+        <div className="bg-gray-3 h-full aspect-square rounded-2xl"></div>
       </a>
       <div className="mx-3 p-5 w-full">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/hotels/detail" className="text-2xl hover:underline">
-              Hotel Name
+            <a href="/hotels/detail" className="text-2xl truncate hover:underline">
+              {hotel.name}
             </a>
             <h1 className="ml-5 text-sm">
               <i className="fa-solid fa-star" />
@@ -28,7 +30,7 @@ const HotelCard = () => {
               <div className="text-gray-1 text-sm font-light">100+ reviews</div>
             </div>
             <div className="bg-black text-white text-xl aspect-square rounded-lg h-10 flex items-center justify-center ml-4">
-              5
+              {hotel.review_score}
             </div>
           </div>
         </div>
@@ -36,12 +38,12 @@ const HotelCard = () => {
           <i class="fa-solid fa-location-dot mr-2"></i>location
         </h1>
         <div className="flex justify-between mt-3">
-          <div className="w-3/5 h-[125px] bg-gradient-to-r from-gray-3 to-white-0% rounded-lg p-5">
-            <h1 className="text-gray-1">This is Description</h1>
+          <div className="w-3/5 h-[125px] bg-gradient-to-r from-gray-3 to-white-0% rounded-lg p-5 ">
+            <h1 className="text-gray-1 ">{hotel.description}</h1>
           </div>
           <div className="w-fit mt-8">
             <h1 className="text-2xl font-semibold flex justify-end">
-              THB 1,200
+              THB {numberWithCommas(hotel.price)}
             </h1>
             <button className="bg-black text-white text-lg rounded-xl p-2 px-5 mt-2">
               <a href="/hotels/detail">Reserve Room</a>
