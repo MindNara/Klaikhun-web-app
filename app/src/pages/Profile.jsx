@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import Navbar from "../components/Navbar";
-import { HotelCard, FlightCard } from "../components/index";
+import { React, useState } from "react";
+import { hotelList } from "../constants/hotelList";
+import { Navbar, HotelCard, FlightCard } from "../components/index";
 
 const Profile = () => {
     const [showCard, setShowCard] = useState(false);
@@ -83,7 +82,14 @@ const Profile = () => {
 
                     <div className={`${showStatus ? "hidden" : "block"}`}>
                         <div className="mt-10 max-2xl:mt-12" name="Completed">
-                            {showCard ? <FlightCard /> : <HotelCard />}
+                            {showCard ? 
+                                <FlightCard /> :
+                                hotelList.map((item) => (
+                                    <div className="mt-8 w-full">
+                                      <HotelCard key={item.id} {...item}/>
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
