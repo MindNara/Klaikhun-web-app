@@ -3,6 +3,29 @@ import Navbar from "../components/Navbar";
 import { FlightSearch, FlightCard } from "../components/index";
 
 const Flight = () => {
+  const flights = [
+    {
+      airline_name: "Air Asia",
+      airline_logo:
+        "https://logowik.com/content/uploads/images/674_airasia.jpg",
+      flight_beginning: "BKK",
+      flight_destination: "CNX",
+      time_departure: "11:30 PM",
+      time_arriving: "10:30 PM",
+      ticket_price: 1690,
+    },
+    {
+      airline_name: "Bangkok Airways",
+      airline_logo:
+        "https://logowik.com/content/uploads/images/bangkok-airways7551.jpg",
+      flight_beginning: "BKK",
+      flight_destination: "CNX",
+      time_departure: "11:30 PM",
+      time_arriving: "11:30 PM",
+      ticket_price: 2090,
+    },
+  ];
+
   return (
     <>
       <div className="flex justify-center items-center">
@@ -81,7 +104,9 @@ const Flight = () => {
 
         <div className="flex-col w-full">
           <h1 className="text-xl">Showing 119 search results</h1>
-          <FlightCard />
+          {flights.map((item) => (
+            <FlightCard flight={item} />
+          ))}
         </div>
       </div>
     </>
