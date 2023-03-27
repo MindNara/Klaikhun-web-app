@@ -1,8 +1,17 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { HotelSearch, HotelDetailCard } from "../components/index";
+import { HotelSearch, HotelDetailCard, StarRating } from "../components/index";
+import { useParams } from "react-router-dom";
+import { hotelList } from "../constants/hotelList";
 
 const Hotel = () => {
+    const routeParams = useParams();
+    const hotel = hotelList.find(hotel => hotel.id === parseInt(routeParams.hotelId))
+
+    const numberWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
     return (
         <>
             <div className="flex justify-center items-center">
@@ -18,14 +27,10 @@ const Hotel = () => {
                     {/* ------------- Name Hotel & Star ------------- */}
                     <div className="flex items-center">
                         <h1 className="text-4xl font-semibold">
-                            Hotel Name
+                            {hotel.name}
                         </h1>
                         <h1 className="ml-5 text-lg">
-                            <i className="fa-solid fa-star" />
-                            <i className="fa-solid fa-star" />
-                            <i className="fa-solid fa-star" />
-                            <i className="fa-regular fa-star" />
-                            <i className="fa-regular fa-star" />
+                            <StarRating rating={hotel.hotel_class} />
                         </h1>
                     </div>
 
@@ -37,28 +42,25 @@ const Hotel = () => {
                                 <div className="text-gray-1 text-sm font-light">100+ reviews</div>
                             </div>
                             <div className="bg-black text-white text-xl aspect-square rounded-lg h-10 flex items-center justify-center ml-4">
-                                5
+                                {hotel.review_score}
                             </div>
                         </div>
                         <h1 className="text-4xl font-semibold flex justify-end">
-                            THB 1,200
+                            THB {numberWithCommas(hotel.price)}
                         </h1>
                     </div>
                 </div>
 
                 {/* ------------- Location & Description ------------- */}
                 <div className="text-gray-1 my-6 flex flex-col gap-4 font-light text-lg">
-                    <span className=""><i class="fa-solid fa-location-dot mr-2"></i>location</span>
-                    <span className="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi error corporis reprehenderit nulla. Facere, exercitationem ut!
-                        Nihil magni veniam vel voluptates exercitationem harum, iste distinctio aliquam minima magnam ea hic. Lorem ipsum dolor, sit amet consectetur
-                        adipisicing elit. Illo quas nisi impedit, qui dignissimos placeat obcaecati expedita animi laboriosam labore repellat a, ratione eveniet adipisci sunt
-                        ullam deleniti dolorem numquam.</span>
+                    <span className=""><i class="fa-solid fa-location-dot mr-2"></i>{hotel.location}</span>
+                    <span className="">{hotel.description}</span>
                 </div>
 
                 <div className="flex justify-between items-center space-x-8 mt-6 h-[760px]">
                     {/* ------------- Hotel Images ------------- */}
                     <div className="w-3/5 flex flex-col gap-6 h-full">
-                        <div className="bg-gray-3 rounded-[40px] w-full h-[30rem]"></div>
+                        <div className="bg-gray-3 rounded-[40px] w-full h-[30rem]"><img className="object-cover object-center rounded-[40px] overflow-hidden" src={hotel.hotel_image1} /></div>
                         <div className="w-full flex gap-6">
                             <div className="bg-gray-3 rounded-[40px] w-1/3 h-[16rem]"></div>
                             <div className="bg-gray-3 rounded-[40px] w-1/3 h-[16rem]"></div>
@@ -68,7 +70,7 @@ const Hotel = () => {
 
                     {/* ------------- Card Hotel Detail ------------- */}
                     <div className="w-2/5 h-full">
-                        < HotelDetailCard />
+                        < HotelDetailCard hotel={hotel} />
                     </div>
                 </div>
             </div>

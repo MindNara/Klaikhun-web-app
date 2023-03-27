@@ -1,9 +1,14 @@
 import React from "react";
 
-const HotelDetailCard = () => {
+const HotelDetailCard = ({ hotel }) => {
+
+    const numberWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
     return (
         <div className="border border-gray-2 rounded-[40px] h-full px-10 py-14">
-            <h1 className="text-3xl font-medium">THB 1,200<span className="text-xl text-gray-1 font-light">/night</span></h1>
+            <h1 className="text-3xl font-medium">THB {numberWithCommas(hotel.price)}<span className="text-xl text-gray-1 font-light">/night</span></h1>
             <hr className="text-gray-2 my-8" />
 
             <div className="flex w-full justify-between items-center mt-10 gap-10">

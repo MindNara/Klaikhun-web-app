@@ -1,24 +1,24 @@
 import React from "react";
 import { StarRating } from '../components'
 
-const HotelCard = ({ name, description, class_tier, review_score, price }) => {
+const HotelCard = ({ id, name, description, hotel_class, review_score, price, location, hotel_image1 }) => {
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   return (
     <div className="bg-white drop-shadow-lg rounded-2xl w-full h-[240px] flex">
-      <a href="/hotels/detail">
-        <div className="bg-gray-3 h-full aspect-square rounded-2xl"></div>
+      <a href={'hotels/' + id}>
+        <div className="bg-gray-3 h-full aspect-square rounded-2xl"><img src={hotel_image1} /></div>
       </a>
       <div className="mx-3 p-5 w-full">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/hotels/detail" className="text-2xl truncate hover:underline">
+            <a href={'hotels/' + id} className="text-2xl truncate hover:underline">
               {name}
             </a>
             <h1 className="ml-5 text-sm">
-              <StarRating rating={class_tier} />
+              <StarRating rating={hotel_class} />
             </h1>
           </div>
           <div className="flex justify-center items-center">
@@ -32,7 +32,7 @@ const HotelCard = ({ name, description, class_tier, review_score, price }) => {
           </div>
         </div>
         <h1 className="mt-1 text-gray-1 text-sm font-light">
-          <i class="fa-solid fa-location-dot mr-2"></i>location
+          <i class="fa-solid fa-location-dot mr-2"></i>{location}
         </h1>
         <div className="flex justify-between mt-3">
           <div className="w-3/5 h-[125px] bg-gradient-to-r from-gray-3 to-white-0% rounded-lg p-5 ">
