@@ -1,4 +1,5 @@
 import React from "react";
+import { StarRating } from '../components'
 
 const HotelCard = ({ name, description, class_tier, review_score, price }) => {
   const numberWithCommas = (x) => {
@@ -17,11 +18,7 @@ const HotelCard = ({ name, description, class_tier, review_score, price }) => {
               {name}
             </a>
             <h1 className="ml-5 text-sm">
-              <i className="fa-solid fa-star" />
-              <i className="fa-solid fa-star" />
-              <i className="fa-solid fa-star" />
-              <i className="fa-regular fa-star" />
-              <i className="fa-regular fa-star" />
+              <StarRating rating={class_tier} />
             </h1>
           </div>
           <div className="flex justify-center items-center">
