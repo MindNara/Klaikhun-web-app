@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Navbar from "../components/NavbarLanding";
 import ImgLanding from "../assets/ImgLanding.png";
+import { hotelList } from "../constants/hotelList";
 import { HotelSearch, FlightSearch, TopDesCard, ExploreHotelCard, DealCard } from "../components/index";
 
 const Landing = () => {
@@ -14,6 +15,12 @@ const Landing = () => {
   const handleClick2 = () => {
     setShowHotel(true);
   };
+
+  const hotels = [];
+  for (let i = 0; i < 3; i++) {
+    hotels.push(<ExploreHotelCard key={hotelList[i].id} {...hotelList[i]} />);
+  }
+
   return (
     <div>
       <div className="flex justify-center items-center">
@@ -73,7 +80,7 @@ const Landing = () => {
             Accommodation Promotions
           </span>
           <div className="flex flex-wrap space-x-5 py-10">
-            <DealCard></DealCard>
+            <DealCard />
           </div>
         </div>
 
@@ -95,7 +102,7 @@ const Landing = () => {
           <span className="font-medium text-3xl">
             Top destinations in Thailand
           </span>
-          <div className="flex justify-between space-x-5 py-10">
+          <div className="flex flex-wrap space-x-5 py-10">
             <TopDesCard></TopDesCard>
           </div>
         </div>
@@ -105,8 +112,8 @@ const Landing = () => {
           <span className="font-medium text-3xl">
             Explore more travel vacation hotels
           </span>
-          <div className="flex justify-between space-x-5 py-10">
-            <ExploreHotelCard></ExploreHotelCard>
+          <div className="flex flex-wrap space-x-5 py-10">
+            {hotels}
           </div>
         </div>
       </div>
