@@ -6,7 +6,7 @@ const Signup = () => {
       <div className=" w-full h-screen">
         <div className="absolute bg-white w-3/5 h-full flex justify-center flex-col items-center p-20">
           <h2 className="text-3xl font-bold text-center p-10">Register</h2>
-          <div className="w-full flex flex row">
+          <div className="w-full flex flex-row">
             <div className="w-1/2 mr-1 text-gray-2 py-2 px-2">
               <label htmlFor="">First Name</label>
               <input
