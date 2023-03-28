@@ -8,7 +8,7 @@ const DealCard = ({pro}) => {
 
   return (
     <div className="bg-gray-3 w-full h-[25rem] max-2xl:h-[20rem] rounded-3xl shadow-xl relative">
-      <img src={pro.img_location} className="object-contain w-full h-full " />
+      <img src={pro.img_location} className="object-contain w-full h-full" />
       <div className="bg-white w-full h-1/2 rounded-3xl absolute bottom-0">
         <div className="h-full flex flex-col justify-center mx-8 gap-5">
           <div className="flex justify-between">

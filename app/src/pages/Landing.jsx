@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navbar from "../components/NavbarLanding";
 import ImgLanding from "../assets/ImgLanding.png";
 import { hotelList } from "../constants/hotelList";
+import promotion from "../constants/promotion.json";
 import { HotelSearch, FlightSearch, TopDesCard, ExploreHotelCard, DealCard } from "../components/index";
 
 const Landing = () => {
@@ -19,6 +20,11 @@ const Landing = () => {
   const hotels = [];
   for (let i = 0; i < 3; i++) {
     hotels.push(<ExploreHotelCard key={hotelList[i].id} {...hotelList[i]} />);
+  }
+
+  const deals = [];
+  for (let i = 0; i < 3; i++) {
+    deals.push(<DealCard pro={promotion[i]} />);
   }
 
   return (
@@ -79,8 +85,8 @@ const Landing = () => {
           <span className="font-medium text-4xl flex justify-center">
             Accommodation Promotions
           </span>
-          <div className="flex flex-wrap space-x-5 py-10">
-            <DealCard />
+          <div className="grid grid-cols-3 w-full gap-8 py-10">
+            {deals}
           </div>
         </div>
 
