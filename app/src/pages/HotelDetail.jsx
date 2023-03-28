@@ -10,7 +10,7 @@ const Hotel = () => {
 
     const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      }
+    }
 
     return (
         <>
@@ -57,14 +57,22 @@ const Hotel = () => {
                     <span className="">{hotel.description}</span>
                 </div>
 
-                <div className="flex justify-between items-center space-x-8 mt-6 h-[760px]">
+                <div className="flex justify-between space-x-8 mt-6">
                     {/* ------------- Hotel Images ------------- */}
                     <div className="w-3/5 flex flex-col gap-6 h-full">
-                        <div className="bg-gray-3 rounded-[40px] w-full h-[30rem]"><img className="object-cover object-center rounded-[40px] overflow-hidden" src={hotel.hotel_image1} /></div>
-                        <div className="w-full flex gap-6">
-                            <div className="bg-gray-3 rounded-[40px] w-1/3 h-[16rem]"></div>
-                            <div className="bg-gray-3 rounded-[40px] w-1/3 h-[16rem]"></div>
-                            <div className="bg-gray-3 rounded-[40px] w-1/3 h-[16rem]"></div>
+                        <div className="bg-gray-3 rounded-[40px] w-full h-[40rem]">
+                            <img className="object-cover w-full h-full rounded-[40px]" src={hotel.hotel_image1} />
+                        </div>
+                        <div className="w-full h-[14em] flex gap-6">
+                            <div className="bg-gray-3 rounded-[40px] w-1/3">
+                                <img className="object-cover w-full h-full rounded-[40px]" src={hotel.hotel_image1} />
+                            </div>
+                            <div className="bg-gray-3 rounded-[40px] w-1/3">
+                                <img className="object-cover w-full h-full rounded-[40px]" src={hotel.hotel_image1} />
+                            </div>
+                            <div className="bg-gray-3 rounded-[40px] w-1/3">
+                                <img className="object-cover w-full h-full rounded-[40px]" src={hotel.hotel_image1} />
+                            </div>
                         </div>
                     </div>
 
