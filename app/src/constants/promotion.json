@@ -1,0 +1,36 @@
+[{
+    "promotion_id": 101,
+    "promotion_name": "New Account",
+    "detail": "Sign Up NOW! discount 50% for first time booked hotel in Bangkok. 1 time/1 user",
+    "discount": "0.5",
+    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1076391135515246612/50-Off-Discount-Vector-Transparent-PNG.png",
+    "code": "WELCOME50"
+},{
+    "promotion_id": 102,
+    "promotion_name": "Mid Month Sale! [Apr]",
+    "detail": "Mid Month Sale! ลดราคาโรงแรม และตั๋วเครื่องบิน 30% สำหรับการจองภายในวันที่ 15-17 เมษายนนี้เท่านั้น",
+    "discount": "0.3",
+    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090185026160840714/20220415_Listpage_MC_Midmonth_03.jpeg",
+    "code": "AprMidMonth"
+},{
+    "promotion_id": 102,
+    "promotion_name": "Mid Month Sale! [Apr]",
+    "detail": "Mid Month Sale! ลดราคาโรงแรม และตั๋วเครื่องบิน 30% สำหรับการจองภายในวันที่ 15-17 เมษายนนี้เท่านั้น",
+    "discount": "0.3",
+    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090185026160840714/20220415_Listpage_MC_Midmonth_03.jpeg",
+    "code": "AprMidMonth"
+},{
+    "promotion_id": 102,
+    "promotion_name": "Mid Month Sale! [Apr]",
+    "detail": "Mid Month Sale! ลดราคาโรงแรม และตั๋วเครื่องบิน 30% สำหรับการจองภายในวันที่ 15-17 เมษายนนี้เท่านั้น",
+    "discount": "0.3",
+    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090185026160840714/20220415_Listpage_MC_Midmonth_03.jpeg",
+    "code": "AprMidMonth"
+},{
+    "promotion_id": 102,
+    "promotion_name": "Mid Month Sale! [Apr]",
+    "detail": "Mid Month Sale! ลดราคาโรงแรม และตั๋วเครื่องบิน 30% สำหรับการจองภายในวันที่ 15-17 เมษายนนี้เท่านั้น",
+    "discount": "0.3",
+    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090185026160840714/20220415_Listpage_MC_Midmonth_03.jpeg",
+    "code": "AprMidMonth"
+}]

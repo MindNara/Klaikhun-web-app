@@ -1,16 +1,25 @@
 import React from "react";
 
-const DealCard = () => {
+const DealCard = ({pro}) => {
+
+  function copy() {
+    navigator.clipboard.writeText(pro.code);
+  }
+
   return (
-    <div className="bg-gray-3 w-[32%] h-[25rem] max-2xl:h-[20rem] rounded-3xl shadow-xl relative">
+    <div className="bg-gray-3 w-full h-[25rem] max-2xl:h-[20rem] rounded-3xl shadow-xl relative">
+      <img src={pro.img_location} className="object-contain w-full h-full " />
       <div className="bg-white w-full h-1/2 rounded-3xl absolute bottom-0">
         <div className="h-full flex flex-col justify-center mx-8 gap-5">
-          <span className="text-2xl font-medium">7% OFF</span>
-          <div className="bg-black p-3 flex items-center justify-center rounded-2xl">
-            <span className="text-white text-2xl font-medium tracking-wider">
-              #000007
-            </span>
+          <div className="flex justify-between">
+          <span className="text-2xl text-gray-1">{pro.promotion_name}</span>
+          <span className="text-2xl font-medium">{pro.discount * 100}% OFF</span>
           </div>
+          <button onClick={copy} className="tooltip bg-black p-3 flex items-center justify-center rounded-2xl">
+            <span className="text-white text-2xl font-medium tracking-wider">
+              {pro.code}
+            </span>
+          </button>
         </div>
       </div>
     </div>
