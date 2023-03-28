@@ -103,7 +103,7 @@ const Landing = () => {
             Top destinations in Thailand
           </span>
           <div className="flex flex-wrap space-x-5 py-10">
-            <TopDesCard></TopDesCard>
+            <TopDesCard />
           </div>
         </div>
 

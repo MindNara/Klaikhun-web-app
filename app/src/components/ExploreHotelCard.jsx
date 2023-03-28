@@ -2,9 +2,6 @@ import React from "react";
 import { StarRating } from '../components'
 
 const ExploreHotelCard = ({ id, name, hotel_class, location, hotel_image1 }) => {
-  const numberWithCommas = (x) => {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
 
   return (
     <div className="relative bg-gray-3 w-[32%] h-[25rem] max-2xl:h-[20rem] rounded-3xl shadow-lg">

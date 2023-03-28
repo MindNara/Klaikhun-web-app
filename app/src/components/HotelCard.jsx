@@ -11,10 +11,10 @@ const HotelCard = ({ id, name, description, hotel_class, review_score, price, lo
       <a href={'hotels/' + id}>
         <div className="bg-gray-3 h-full aspect-square rounded-2xl"><img src={hotel_image1} className="object-cover w-full h-full rounded-2xl" /></div>
       </a>
-      <div className="mx-3 px-5 py-4 w-full max-2xl:w-[730px]">
+      <div className="mx-3 px-5 py-4">
         <div className="flex justify-between">
-          <div className="flex items-center w-full max-2xl:w-[80%]">
-            <a href={'hotels/' + id} className="text-2xl whitespace-nowrap text-ellipsis overflow-hidden hover:underline">
+          <div className="flex items-center w-full">
+            <a href={'hotels/' + id} className="text-2xl truncate hover:underline">
               {name}
             </a>
             <span className="ml-5 text-sm w-1/4">
@@ -43,7 +43,7 @@ const HotelCard = ({ id, name, description, hotel_class, review_score, price, lo
               THB {numberWithCommas(price)}
             </h1>
             <button className="bg-black text-white text-lg rounded-xl p-2 px-5 mt-2">
-              <a href={'hotels/' + id} >Reserve Room</a>
+              <a href="/hotels/detail" >Reserve Room</a>
             </button>
           </div>
         </div>
