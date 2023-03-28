@@ -25,17 +25,17 @@ const Hotel = () => {
                 <div className="flex justify-between">
 
                     {/* ------------- Name Hotel & Star ------------- */}
-                    <div className="flex items-center">
+                    <div className="flex flex-col w-[70%]">
                         <h1 className="text-4xl font-semibold">
                             {hotel.name}
                         </h1>
-                        <h1 className="ml-5 text-lg">
+                        <span className="mt-2 text-lg">
                             <StarRating rating={hotel.hotel_class} />
-                        </h1>
+                        </span>
                     </div>
 
                     {/* ------------- Reviews & Price ------------- */}
-                    <div className="flex items-center gap-8">
+                    <div className="flex items-start gap-8">
                         <div className="flex justify-center items-center">
                             <div className="flex flex-col justify-end items-end">
                                 <div className="text-sm">Very good</div>
