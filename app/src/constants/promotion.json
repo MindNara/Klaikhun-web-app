@@ -13,24 +13,24 @@
     "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090185026160840714/20220415_Listpage_MC_Midmonth_03.jpeg",
     "code": "AprMidMonth"
 },{
-    "promotion_id": 102,
-    "promotion_name": "Mid Month Sale! [Apr]",
+    "promotion_id": 103,
+    "promotion_name": "Black Friday",
     "detail": "Mid Month Sale! ลดราคาโรงแรม และตั๋วเครื่องบิน 30% สำหรับการจองภายในวันที่ 15-17 เมษายนนี้เท่านั้น",
-    "discount": "0.3",
-    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090185026160840714/20220415_Listpage_MC_Midmonth_03.jpeg",
-    "code": "AprMidMonth"
+    "discount": "0.07",
+    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090589611643895818/tamanna-rumee-KzidBAES-uE-unsplash.jpg",
+    "code": "BLACKFRI"
 },{
-    "promotion_id": 102,
-    "promotion_name": "Mid Month Sale! [Apr]",
+    "promotion_id": 104,
+    "promotion_name": "SALE",
     "detail": "Mid Month Sale! ลดราคาโรงแรม และตั๋วเครื่องบิน 30% สำหรับการจองภายในวันที่ 15-17 เมษายนนี้เท่านั้น",
-    "discount": "0.3",
-    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090185026160840714/20220415_Listpage_MC_Midmonth_03.jpeg",
-    "code": "AprMidMonth"
+    "discount": "0.03",
+    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090589586427744256/tamanna-rumee-Wt33T42JNCM-unsplash.jpg",
+    "code": "LITTLE"
 },{
-    "promotion_id": 102,
-    "promotion_name": "Mid Month Sale! [Apr]",
+    "promotion_id": 105,
+    "promotion_name": "FLIGHT SALE",
     "detail": "Mid Month Sale! ลดราคาโรงแรม และตั๋วเครื่องบิน 30% สำหรับการจองภายในวันที่ 15-17 เมษายนนี้เท่านั้น",
-    "discount": "0.3",
-    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090185026160840714/20220415_Listpage_MC_Midmonth_03.jpeg",
-    "code": "AprMidMonth"
+    "discount": "0.2",
+    "img_location": "https://cdn.discordapp.com/attachments/962280584418304030/1090589562818011136/natali-quijano-N79MYsd2Ce4-unsplash.jpg",
+    "code": "FLIGHT20"
 }]
