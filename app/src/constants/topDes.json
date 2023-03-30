@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "Chiang Mai",
+        "img" : "https://a.cdn-hotels.com/gdcs/production194/d455/ff7495ba-b88d-4956-9445-274f0a4c5ffc.jpg" 
+    },
+    {
+        "name" : "Khao Yai",
+        "img" : "https://www.ahstatic.com/photos/b4k4_ho_00_p_3000x2250.jpg"
+    },
+    {
+        "name" : "Chon Buri",
+        "img" : "https://media-whichmedia.s3.ap-southeast-1.amazonaws.com/media/large/9/b/9bfe5301bf40.jpeg"
+    }
+]

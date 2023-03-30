@@ -4,7 +4,14 @@ import Navbar from "../components/NavbarLanding";
 import ImgLanding from "../assets/ImgLanding.png";
 import { hotelList } from "../constants/hotelList";
 import promotion from "../constants/promotion.json";
-import { HotelSearch, FlightSearch, TopDesCard, ExploreHotelCard, DealCard } from "../components/index";
+import {
+  HotelSearch,
+  FlightSearch,
+  TopDesCard,
+  ExploreHotelCard,
+  DealCard,
+} from "../components/index";
+import topDes from "../constants/topDes.json";
 
 const Landing = () => {
   const [showHotel, setShowHotel] = useState(true);
@@ -38,16 +45,19 @@ const Landing = () => {
             {/* <!-- Hotels --> */}
             <button
               onClick={handleClick2}
-              className={`h-16 w-56 rounded-tl-3xl  ${showHotel ? "bg-white" : "bg-black"
-                }`}
+              className={`h-16 w-56 rounded-tl-3xl  ${
+                showHotel ? "bg-white" : "bg-black"
+              }`}
             >
               <i
-                class={`fa-sharp fa-solid fa-hotel mr-3 ${showHotel ? "text-black" : "text-white"
-                  }`}
+                class={`fa-sharp fa-solid fa-hotel mr-3 ${
+                  showHotel ? "text-black" : "text-white"
+                }`}
               ></i>
               <span
-                className={`${showHotel ? "text-black" : "text-white"
-                  } text-lg font-medium`}
+                className={`${
+                  showHotel ? "text-black" : "text-white"
+                } text-lg font-medium`}
               >
                 Hotels
               </span>
@@ -56,16 +66,19 @@ const Landing = () => {
             {/* <!-- Flights --> */}
             <button
               onClick={handleClick1}
-              className={`h-16 w-56 rounded-tr-3xl ${showHotel ? "bg-black" : "bg-white"
-                }`}
+              className={`h-16 w-56 rounded-tr-3xl ${
+                showHotel ? "bg-black" : "bg-white"
+              }`}
             >
               <i
-                class={`fa-solid fa-plane-departure mr-3 ${showHotel ? "text-white" : "text-black"
-                  }`}
+                class={`fa-solid fa-plane-departure mr-3 ${
+                  showHotel ? "text-white" : "text-black"
+                }`}
               ></i>
               <span
-                className={`${showHotel ? "text-white" : "text-black"
-                  } text-lg font-medium`}
+                className={`${
+                  showHotel ? "text-white" : "text-black"
+                } text-lg font-medium`}
               >
                 Flights
               </span>
@@ -85,9 +98,7 @@ const Landing = () => {
           <span className="font-medium text-4xl flex justify-center">
             Accommodation Promotions
           </span>
-          <div className="grid grid-cols-3 w-full gap-8 py-10">
-            {deals}
-          </div>
+          <div className="grid grid-cols-3 w-full gap-8 py-10">{deals}</div>
         </div>
 
         {/* <!-- Images --> */}
@@ -109,7 +120,9 @@ const Landing = () => {
             Top destinations in Thailand
           </span>
           <div className="flex flex-wrap space-x-5 py-10">
-            <TopDesCard />
+            {topDes.map((item) => (
+              <TopDesCard des={item} />
+            ))}
           </div>
         </div>
 
@@ -118,9 +131,7 @@ const Landing = () => {
           <span className="font-medium text-3xl">
             Explore more travel vacation hotels
           </span>
-          <div className="flex flex-wrap space-x-5 py-10">
-            {hotels}
-          </div>
+          <div className="flex flex-wrap space-x-5 py-10">{hotels}</div>
         </div>
       </div>
     </div>
