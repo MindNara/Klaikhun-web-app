@@ -24,14 +24,13 @@ const Landing = () => {
     setShowHotel(true);
   };
 
-  const hotels = [];
-  for (let i = 0; i < 3; i++) {
-    hotels.push(<ExploreHotelCard key={hotelList[i].id} {...hotelList[i]} />);
-  }
-
   const deals = [];
+  const hotels = [];
+  const topDest = [];
   for (let i = 0; i < 3; i++) {
     deals.push(<DealCard pro={promotion[i]} />);
+    hotels.push(<ExploreHotelCard key={hotelList[i]} {...hotelList[i]} />);
+    topDest.push(<TopDesCard des={topDes[i]} />);
   }
 
   return (
@@ -45,19 +44,16 @@ const Landing = () => {
             {/* <!-- Hotels --> */}
             <button
               onClick={handleClick2}
-              className={`h-16 w-56 rounded-tl-3xl  ${
-                showHotel ? "bg-white" : "bg-black"
-              }`}
+              className={`h-16 w-56 rounded-tl-3xl  ${showHotel ? "bg-white" : "bg-black"
+                }`}
             >
               <i
-                class={`fa-sharp fa-solid fa-hotel mr-3 ${
-                  showHotel ? "text-black" : "text-white"
-                }`}
+                class={`fa-sharp fa-solid fa-hotel mr-3 ${showHotel ? "text-black" : "text-white"
+                  }`}
               ></i>
               <span
-                className={`${
-                  showHotel ? "text-black" : "text-white"
-                } text-lg font-medium`}
+                className={`${showHotel ? "text-black" : "text-white"
+                  } text-lg font-medium`}
               >
                 Hotels
               </span>
@@ -66,19 +62,16 @@ const Landing = () => {
             {/* <!-- Flights --> */}
             <button
               onClick={handleClick1}
-              className={`h-16 w-56 rounded-tr-3xl ${
-                showHotel ? "bg-black" : "bg-white"
-              }`}
+              className={`h-16 w-56 rounded-tr-3xl ${showHotel ? "bg-black" : "bg-white"
+                }`}
             >
               <i
-                class={`fa-solid fa-plane-departure mr-3 ${
-                  showHotel ? "text-white" : "text-black"
-                }`}
+                class={`fa-solid fa-plane-departure mr-3 ${showHotel ? "text-white" : "text-black"
+                  }`}
               ></i>
               <span
-                className={`${
-                  showHotel ? "text-white" : "text-black"
-                } text-lg font-medium`}
+                className={`${showHotel ? "text-white" : "text-black"
+                  } text-lg font-medium`}
               >
                 Flights
               </span>
@@ -120,9 +113,7 @@ const Landing = () => {
             Top destinations in Thailand
           </span>
           <div className="flex flex-wrap space-x-5 py-10">
-            {topDes.map((item) => (
-              <TopDesCard des={item} />
-            ))}
+            {topDest}
           </div>
         </div>
 

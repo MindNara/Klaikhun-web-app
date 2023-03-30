@@ -8,10 +8,10 @@ const TopDesCard = ({ des }) => {
           src={des.img}
           className="object-cover w-full h-full rounded-3xl"
         />
-      <div className="absolute bg-white w-full h-2/5 rounded-3xl bottom-0 flex flex-col justify-center px-8">
-        <span className="text-3xl font-medium hover:underline">{des.name}</span>
-        <span className="text-xl font-light">10+ accommodations</span>
-      </div>
+        <div className="absolute bg-white w-full h-2/5 rounded-3xl bottom-0 flex flex-col justify-center px-8">
+          <span className="text-3xl font-medium hover:underline">{des.name}</span>
+          <span className="text-xl font-light">10+ accommodations</span>
+        </div>
       </a>
     </div>
   );
