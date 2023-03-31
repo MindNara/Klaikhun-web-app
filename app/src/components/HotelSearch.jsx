@@ -1,11 +1,16 @@
 import React from "react";
+import { hotelList } from "../constants/hotelList";
 
 const HotelSearch = () => (
   <div className="bg-white rounded-2xl shadow-lg h-44 flex flex-row items-center justify-between p-8 space-x-5 absolute w-full">
     {/* <!-- Destination --> */}
     <div className="bg-white border border-gray-2 rounded-2xl flex flex-col justify-center px-8 w-3/5 h-full">
       <span className="text-gray-1 text-sm">DESTINATION</span>
-      <span className="text-black text-3xl font-semibold">Bangkok</span>
+      <select className="text-black text-3xl font-semibold rounded-xl cursor-pointer" name="destination" id="destination">
+        {hotelList.map((item) => (
+          <option className="text-xl" value={item.id}>{item.location}</option>
+        ))}
+      </select>
     </div>
 
     {/* <!-- Check-In & Check-Out --> */}
@@ -13,32 +18,29 @@ const HotelSearch = () => (
       <div className="checkIn">
         <span className="text-gray-1 text-sm">CHECK-IN</span>
         <div>
-          <span className="text-black text-3xl font-semibold mr-4">
-            Sat, Feb 11
-          </span>
-          <i className="fas fa-calendar-alt fa-2x"></i>
+          <input type="date" className="text-black text-3xl font-semibold mr-4 cursor-pointer" name="check-in" />
         </div>
       </div>
       <div className="checkOut">
         <span className="text-gray-1 text-sm">CHECK-OUT</span>
         <div>
-          <span className="text-black text-3xl font-semibold mr-4">
-            Sun, Feb 12
-          </span>
-          <i className="fas fas fa-calendar-alt fa-2x"></i>
+          <input type="date" className="text-black text-3xl font-semibold mr-4 cursor-pointer" name="check-out" />
         </div>
       </div>
       {/* <!-- Search btn --> */}
     </div>
 
     {/* <!-- Room & Guests --> */}
-    <div className="bg-white border border-gray-2 rounded-2xl flex flex-col justify-center px-8 w-full h-full">
-      <span className="text-gray-1 text-sm">ROOM AND GUESTS</span>
-      <div>
-        <span className="text-black text-3xl font-semibold mr-6">
-          1 Room, 2 Persons
-        </span>
-        <i className="fas fas fa-angle-down fa-2x"></i>
+    <div className="bg-white border border-gray-2 rounded-2xl flex flex-col justify-center w-3/5 px-8 h-full">
+      <span className="text-gray-1 text-sm">GUESTS</span>
+      <div className="flex">
+        <input
+          className="text-black text-3xl font-semibold w-[15%] max-2xl:w-[20%]"
+          type="number"
+          name="guests"
+          value="01"
+        />
+        <span className="text-black text-3xl font-semibold">Persons</span>
       </div>
     </div>
     {/* <!-- Search btn --> */}
