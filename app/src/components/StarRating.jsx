@@ -1,6 +1,9 @@
 import React from 'react';
 
 const StarRating = ({ rating }) => {
+  if (!rating || rating < 1 || rating > 5) {
+    return null;
+  }
 
   const solidStars = rating;
   const regularStars = 5 - rating;

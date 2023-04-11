@@ -3,13 +3,14 @@ const pool = require("../config");
 
 const router = express.Router();
 
-router.get('/hotels', async function (req, res, next) {
+router.get('/hotels/:hotelId', async function (req, res, next) {
     try {
 
-        const [hotels, hotelsFields] = await pool.query("SELECT * FROM hotels");
+        const [hotelDetail, hotelFields] = await pool.query("SELECT * FROM hotels WHERE hotel_id = ?",
+            [req.params.hotelId]);
 
         res.json({
-            hotels: hotels,
+            hotelDetail: hotelDetail,
         });
 
     } catch (error) {

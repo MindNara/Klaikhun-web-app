@@ -11,9 +11,11 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'static')))
 
-const hotels = require('../server/routes/hotel')
+const hotel = require('../server/routes/hotel')
+const hotelDetail = require('../server/routes/hotelDetail')
 
-app.use(hotels.router)
+app.use(hotel.router)
+app.use(hotelDetail.router)
 
 app.listen(3000, () => {
     console.log('Start server at http://localhost:3000')
