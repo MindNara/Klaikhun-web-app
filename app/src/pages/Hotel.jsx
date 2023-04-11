@@ -203,7 +203,7 @@ const Hotel = () => {
         </div>
 
         {/* max-2xl:w-[20rem] */}
-        <div className="flex flex-col w-[75%]">
+        <div className="flex flex-col w-full">
           <h1 className="text-xl">Showing 123 search results</h1>
           {hotels.map((item) => (
             <div className="mt-8 w-full">

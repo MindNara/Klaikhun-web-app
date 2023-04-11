@@ -13,7 +13,7 @@ const HotelCard = ({ hotel_id, hotel_name, hotel_class, hotel_description, hotel
           <img src={hotel_image1} className="object-cover w-full h-full rounded-2xl" />
         </a>
       </div>
-      <div className="mx-3 px-5 py-4 w-[54rem] max-2xl:w-[700px]">
+      <div className="mx-3 px-5 py-4 w-[58rem] max-2xl:w-[45rem]">
         <div className="flex justify-between w-full">
           <div className="flex items-center w-[80%] max-2xl:w-[70%]">
             <a href={'hotels/' + hotel_id} className="text-2xl whitespace-nowrap text-ellipsis overflow-hidden hover:underline">
