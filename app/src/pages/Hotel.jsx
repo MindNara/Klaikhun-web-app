@@ -1,8 +1,27 @@
-import React from "react";
-import { hotelList } from "../constants/hotelList";
+import React, { useState, useEffect } from "react";
+// import { hotelList } from "../constants/hotelList";
 import { Navbar, HotelSearch, HotelCard } from "../components/index";
+import axios from 'axios';
 
 const Hotel = () => {
+
+  const [hotels, setHotels] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  function getHotels() {
+    axios.get('http://localhost:3000/hotels')
+      .then((response) => {
+        setHotels(response.data.hotels);
+        console.log(response.data.hotels);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
+
+  useEffect(() => {
+    getHotels();
+  }, []);
 
   return (
     <>
@@ -183,12 +202,13 @@ const Hotel = () => {
           </div>
         </div>
 
-        <div className="flex flex-col w-full">
+        {/* max-2xl:w-[20rem] */}
+        <div className="flex flex-col w-[75%]">
           <h1 className="text-xl">Showing 123 search results</h1>
-          {hotelList.map((item) => (
+          {hotels.map((item) => (
             <div className="mt-8 w-full">
-              <HotelCard key={item.id} {...item}/>
-          </div>
+              <HotelCard key={item.hotel_id} {...item} />
+            </div>
           ))}
         </div>
       </div>

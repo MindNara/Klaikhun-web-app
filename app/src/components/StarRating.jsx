@@ -1,6 +1,7 @@
 import React from 'react';
 
 const StarRating = ({ rating }) => {
+
   const solidStars = rating;
   const regularStars = 5 - rating;
 
