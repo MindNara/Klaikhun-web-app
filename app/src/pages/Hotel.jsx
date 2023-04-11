@@ -33,7 +33,7 @@ const Hotel = () => {
       </div>
       <div className="container mx-auto flex gap-10 mt-40">
         {/* ------------------- filter ------------------- */}
-
+        <form method="POST">
         <div className="flex flex-col w-[25%] max-2xl:w-[20rem]">
           <div className="flex w-full justify-between items-center">
             <h1 className="text-2xl font-medium">Filters</h1>
@@ -201,6 +201,7 @@ const Hotel = () => {
             </form>
           </div>
         </div>
+        </form>
 
         {/* max-2xl:w-[20rem] */}
         <div className="flex flex-col w-full">
