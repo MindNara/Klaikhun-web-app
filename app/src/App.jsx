@@ -17,7 +17,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/hotelCheck" element={<HotelCheckOut />} />
-          <Route path="/flightCheck" element={<FlightCheckOut />} />
+          <Route path="/flightCheck/:flightId" element={<FlightCheckOut />} />
           <Route path="/confirmed" element={<Confirm />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>

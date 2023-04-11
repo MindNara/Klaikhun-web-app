@@ -13,9 +13,11 @@ app.use(express.static(path.join(__dirname, 'static')))
 
 const hotel = require('../server/routes/hotel')
 const hotelDetail = require('../server/routes/hotelDetail')
+const flight = require('../server/routes/flight')
 
 app.use(hotel.router)
 app.use(hotelDetail.router)
+app.use(flight.router)
 
 app.listen(3000, () => {
     console.log('Start server at http://localhost:3000')

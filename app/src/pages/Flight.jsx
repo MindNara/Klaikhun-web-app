@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import flights from "../constants/flights.json"
+// import flights from "../constants/flights.json"
 import { FlightSearch, FlightCard } from "../components/index";
+import axios from 'axios';
 
 const Flight = () => {
+
+  const [flights, setFlights] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  function getFlights() {
+    axios.get('http://localhost:3000/flights')
+      .then((response) => {
+        setFlights(response.data.flights);
+        console.log(response.data.flights);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
+
+  useEffect(() => {
+    getFlights();
+  }, []);
 
   return (
     <>
@@ -82,9 +101,9 @@ const Flight = () => {
         </div>
 
         <div className="flex-col w-full">
-          <h1 className="text-xl">Showing 119 search results</h1>
+          <h1 className="text-xl">Showing {flights.length} search results</h1>
           {flights.map((item) => (
-            <FlightCard flight={item} />
+            <FlightCard key={item.flight_id} {...item} />
           ))}
         </div>
       </div>
