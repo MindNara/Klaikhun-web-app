@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2023 at 03:17 PM
+-- Generation Time: Apr 12, 2023 at 05:47 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -41,7 +41,13 @@ INSERT INTO `airlines` (`airline_id`, `airline_name`, `airline_logo`) VALUES
 (1, 'การบินไทย', 'https://scontent.fbkk12-1.fna.fbcdn.net/v/t1.18169-9/1001252_10151641448107293_1692015366_n.png?_nc_cat=101&ccb=1-7&_nc_sid=973b4a&_nc_ohc=hsn_V2eWif8AX8FTSYG&_nc_oc=AQl09JvP39In1CZBPFiGG_mFzh35gdxaKhAYTPAw23DZo4kfEfgnbA4F5shxKWnp-hssmbArW-57s_O-tc7BpOIC&_nc_ht=scontent.fbkk12-1.fna&oh=00_AfBeljO7qgu4mjhhPR1QH7nQSgzlGtCdGjekmPT2IvVmZg&oe=644A76E6'),
 (2, 'แอร์เอเชีย', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/AirAsia_New_Logo.svg/768px-AirAsia_New_Logo.svg.png'),
 (3, 'นกแอร์', 'https://asiaairticket.com/wp-content/uploads/2017/08/Logo-Nokair.png'),
-(4, 'บางกอกแอร์เวย์ส', 'https://www.techtalkthai.com/wp-content/uploads/2016/08/oracle-bangkok-airways-logo.jpg');
+(4, 'บางกอกแอร์เวย์ส', 'https://www.techtalkthai.com/wp-content/uploads/2016/08/oracle-bangkok-airways-logo.jpg'),
+(5, 'กาตาร์ แอร์เวย์', 'https://www.dhakulchan.org/thecube/blog/wp-content/uploads/2020/03/Qatar.jpg'),
+(6, 'เอทิฮัด แอร์เวย์', 'http://t3.gstatic.com/images?q=tbn:ANd9GcRO96TSkb8Tv7BsoWd38BnmzqIuulhyMwWt_WDjCGza3OZr-qXo'),
+(7, 'สิงคโปร์ แอร์ไลน์', 'http://www.hflight.net/forums/uploads/monthly_04_2011/post-2965-0-45692100-1302180543.jpg'),
+(8, 'สวิส แอร์', 'https://amazingthaisea.com/wp-content/uploads/2016/09/Swiss-Airline-Logo-1.jpg'),
+(9, 'ไทย สไมล์', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.innwhy.com%2Fwp-content%2Fuploads%2F2016%2F05%2FThaiSmileAirways1&psig=AOvVaw1KUie1c6MvUxIxw1ioaSVR&ust=1681399670855000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNDmqoPUpP4CFQAAAAAdAAAAABAD'),
+(10, 'ไทยเวียดเจ็ต', 'https://www.airflight-ticket.com/17649047/%E0%B8%88%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B9%8B%E0%B8%A7%E0%B9%80%E0%B8%A7%E0%B8%B5%E0%B8%A2%E0%B8%95%E0%B9%80%E0%B8%88%E0%B9%87%E0%B8%97');
 
 -- --------------------------------------------------------
 
@@ -62,7 +68,16 @@ CREATE TABLE `booking_flights` (
 --
 
 INSERT INTO `booking_flights` (`booking_flight_id`, `booking_flight_date`, `booking_flight_time`, `ticket_id`, `mem_id`) VALUES
-(1, '2023-02-17', '10:45:00', 10007, 3);
+(1, '2023-02-17', '10:45:00', 10007, 3),
+(2, '2023-05-01', '07:25:00', 10001, 1),
+(3, '2023-05-16', '08:25:00', 10002, 2),
+(4, '2023-05-02', '09:25:00', 10003, 10),
+(5, '2023-05-19', '10:25:00', 10004, 4),
+(6, '2023-05-13', '13:25:00', 10005, 5),
+(7, '2023-05-04', '17:35:00', 10006, 6),
+(8, '2023-05-08', '19:50:00', 10015, 9),
+(9, '2023-05-28', '21:20:00', 10013, 8),
+(10, '2023-05-25', '23:55:00', 10010, 7);
 
 -- --------------------------------------------------------
 
@@ -91,7 +106,12 @@ INSERT INTO `booking_hotels` (`booking_hotel_id`, `booking_hotel_date`, `booking
 (2, '2023-03-20', '10:10:00', 5, 4, '2023-03-21', '2023-03-22', 42, 5),
 (3, '2023-03-23', '07:45:02', 3, 2, '2023-03-23', '2023-03-24', 54, 4),
 (4, '2023-03-24', '10:46:11', 2, 1, '2023-03-24', '2023-03-25', 46, 3),
-(5, '2023-03-26', '11:30:56', 10, 7, '2023-03-27', '2023-03-29', 48, 1);
+(5, '2023-03-26', '11:30:56', 2, 7, '2023-03-27', '2023-03-29', 48, 1),
+(6, '2023-01-01', '08:40:00', 2, 1, '2023-02-18', '2023-02-20', 28, 10),
+(7, '2023-01-02', '09:40:00', 4, 2, '2023-02-21', '2023-02-23', 35, 3),
+(8, '2023-01-03', '11:40:00', 2, 3, '2023-02-17', '2023-02-19', 44, 9),
+(9, '2023-01-04', '13:40:00', 3, 3, '2023-02-10', '2023-02-12', 1, 7),
+(10, '2023-01-05', '15:40:00', 6, 4, '2023-02-05', '2023-02-07', 8, 6);
 
 -- --------------------------------------------------------
 
@@ -242,7 +262,12 @@ INSERT INTO `members` (`mem_id`, `mem_fname`, `mem_lname`, `mem_username`, `mem_
 (2, 'OHM', 'xDDDDDDDDDDDD', 'ohm', '12345', 'ohm@gmail.com', '0813497618'),
 (3, 'MILD', 'asdasdasdasdasdasdasd', 'mild', '12345', 'dasdasdasdasd@xDDDDDD.com', '0812345667'),
 (4, 'FRESH', 'xDDDDD123', 'fresh', '12345', 'xDDDDDDD@asdasdasd.com', '0612345623'),
-(5, 'YOUNG ADULT', '007', 'young adult', '12345', 'num007@xDDDDDD.com', '0923413242');
+(5, 'YOUNG ADULT', '007', 'young adult', '12345', 'num007@xDDDDDD.com', '0923413242'),
+(6, 'PUNIM', 'XZXZXZXZ', 'punim', '121212', 'punim@gmail.com', '0980976541'),
+(7, 'POP', 'MAKAO', 'pop', '12345', 'pop@gmail.com', '0987654321'),
+(8, 'UKIMA', 'SAKAWA', 'ukima', '1234', 'ukima@gmail.com', '0876567871'),
+(9, 'LOBOYA', 'PAPAYO', 'loboya', '1234', 'loboya@gmail.com', '0873576521'),
+(10, 'QUITY', 'KASTYUI', 'quity', '1234', 'quity@gmail.com', '0937865432');
 
 -- --------------------------------------------------------
 
@@ -268,7 +293,12 @@ INSERT INTO `promotions` (`pro_id`, `pro_name`, `pro_detail`, `pro_discount`, `p
 (102, 'Mid Month Sale! [Apr]', 'Mid Month Sale!\nลดราคาโรงแรม และตั๋วเครื่องบิน 30% สำหรับการจองภายในวันที่ 15-17 เมษายนนี้เท่านั้น ', 0.3, 'AprMidMonth', 'https://cdn.discordapp.com/attachments/962280584418304030/1090185026160840714/20220415_Listpage_MC_Midmonth_03.jpeg'),
 (103, 'Black Friday', 'ลด 7% สำหรับการจองเที่ยวบิน และโรงแรม เฉพาะวันศุกร์เท่านั้น', 0.07, 'BLACKFRI', 'https://cdn.discordapp.com/attachments/962280584418304030/1090589611643895818/tamanna-rumee-KzidBAES-uE-unsplash.jpg'),
 (104, 'SALE', 'ลดราคาสำหรับการจองโรงแรม และเที่ยวบิน 3% ของขวัญเล็กๆน้อยๆสำหรับสมาชิกของเว็บเรา', 0.03, 'LITTLE', 'https://cdn.discordapp.com/attachments/962280584418304030/1090589586427744256/tamanna-rumee-Wt33T42JNCM-unsplash.jpg'),
-(105, 'FLIGHT SALE', 'เที่ยวกันอย่างจุใจ แถมได้ราคาดี เพียงใส่โค้ด FLIGHT20 รับไปเลย ส่วนลด 20% สำหรับการจองเที่ยวบิน', 0.2, 'FLIGHT20', 'https://cdn.discordapp.com/attachments/962280584418304030/1090589562818011136/natali-quijano-N79MYsd2Ce4-unsplash.jpg');
+(105, 'FLIGHT SALE', 'เที่ยวกันอย่างจุใจ แถมได้ราคาดี เพียงใส่โค้ด FLIGHT20 รับไปเลย ส่วนลด 20% สำหรับการจองเที่ยวบิน', 0.2, 'FLIGHT20', 'https://cdn.discordapp.com/attachments/962280584418304030/1090589562818011136/natali-quijano-N79MYsd2Ce4-unsplash.jpg'),
+(106, '9.9 in April', 'วันที่9เดือน9 แค่มาบินกับเราลดไปเลย 1000.-', 0.01, '9PUNIMLOVECHIFFON', 'https://cdn.discordapp.com/attachments/962280584418304030/1090589562818011136/natali-quijano-N79MYsd2Ce4-unsplash.jpg'),
+(107, 'Deal of the week', 'จองตั๋วกับ Klaikhun\r\nตั้งแต่วันนี้จนถึง 30 มิถุนายน 2566\r\nรับเลย! ตั๋วเครื่องบิน 1 แถม 1\r\nจองด่วน โปรโมชั่นมีจำนวนจำกัด!', 0.4, 'LOVEMYDOG', 'https://cdn.discordapp.com/attachments/962280584418304030/1090589562818011136/natali-quijano-N79MYsd2Ce4-unsplash.jpg'),
+(108, '8.8 in March ', 'วันที่8เดือน8 แค่มาบินกับเราลดไปเลย 1500.-', 0.4, 'MARCHQWE', 'https://cdn.discordapp.com/attachments/962280584418304030/1090589562818011136/natali-quijano-N79MYsd2Ce4-unsplash.jpg'),
+(109, 'sea yha funny', 'เตรียมเที่ยวทะเลสุดมันส์ ไปสนุกกับเรา ลดเลย 20%', 0.1, 'WITHMESEA', 'https://cdn.discordapp.com/attachments/962280584418304030/1090589562818011136/natali-quijano-N79MYsd2Ce4-unsplash.jpg'),
+(110, '7.7 in june', 'วันที่7เดือน7 แค่มาบินกับเราลดไปเลย 1500.-', 0.2, '7JUNEFLASHE', 'https://cdn.discordapp.com/attachments/962280584418304030/1090589562818011136/natali-quijano-N79MYsd2Ce4-unsplash.jpg');
 
 -- --------------------------------------------------------
 
@@ -370,7 +400,7 @@ ALTER TABLE `tickets`
 -- AUTO_INCREMENT for table `booking_hotels`
 --
 ALTER TABLE `booking_hotels`
-  MODIFY `booking_hotel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `booking_hotel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `flights`
@@ -388,7 +418,7 @@ ALTER TABLE `hotels`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
