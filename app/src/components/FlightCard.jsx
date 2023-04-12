@@ -31,8 +31,8 @@ const FlightCard = ({ flight_id, flight_beginning, flight_destination, time_depa
 
   function getTravelTimes(time_departure, time_arriving) {
 
-    const departureDate = new Date(`01/01/2023 ${time_departure}`);
-    const arrivalDate = new Date(`01/01/2023 ${time_arriving}`);
+    const departureDate = new Date(time_departure);
+    const arrivalDate = new Date(time_arriving);
     const travelTime = arrivalDate.getTime() - departureDate.getTime();
 
     const hours = Math.floor(travelTime / 1000 / 60 / 60);
@@ -45,8 +45,8 @@ const FlightCard = ({ flight_id, flight_beginning, flight_destination, time_depa
 
   }
 
-  const formattedDepartureTime = time_departure.substring(0, 5);
-  const formattedArrivalTime = time_arriving.substring(0, 5);
+  const formattedDepartureTime = time_departure.substring(11, 16);
+  const formattedArrivalTime = time_arriving.substring(11, 16);
 
   function getFormattedTime(formatTime) {
 
@@ -56,7 +56,6 @@ const FlightCard = ({ flight_id, flight_beginning, flight_destination, time_depa
     return `${formatTime} PM`
 
   }
-  console.log(getFormattedTime())
 
   return (
     <div className="bg-white drop-shadow-lg rounded-2xl w-full h-[240px] flex justify-center items-center mt-8">

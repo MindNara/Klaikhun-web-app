@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/NavbarLanding";
 import ImgLanding from "../assets/ImgLanding.png";
-import { hotelList } from "../constants/hotelList";
-import promotion from "../constants/promotion.json";
 import {
   HotelSearch,
   FlightSearch,

@@ -82,14 +82,14 @@ const Profile = () => {
 
                     <div className={`${showStatus ? "hidden" : "block"}`}>
                         <div className="mt-10 max-2xl:mt-12" name="Completed">
-                            {showCard ? 
+                            {/* {showCard ? 
                                 <FlightCard /> :
                                 hotelList.map((item) => (
                                     <div className="mt-8 w-full">
                                       <HotelCard key={item.id} {...item}/>
                                     </div>
                                 ))
-                            }
+                            } */}
                         </div>
                     </div>
                 </div>
