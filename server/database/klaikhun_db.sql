@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 10, 2023 at 01:36 PM
+-- Generation Time: Apr 12, 2023 at 04:44 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `khaikun_db`
+-- Database: `Klaikhun_db`
 --
 
 -- --------------------------------------------------------
@@ -107,7 +107,7 @@ CREATE TABLE `flights` (
 
 INSERT INTO `flights` (`flight_id`, `flight_beginning`, `flight_destination`, `time_departure`, `time_arriving`, `airline_id`) VALUES
 (3357, 'กรุงเทพฯ', 'เชียงใหม่', '17:45:00', '19:30:00', 1),
-(3376, 'กรุงเทพฯ', 'กระบี่', '19:40:00', '17:30:00', 1),
+(3376, 'กรุงเทพฯ', 'กระบี่', '17:25:00', '19:40:00', 1),
 (3440, 'กรุงเทพฯ', 'พังงา', '14:00:00', '15:00:00', 2),
 (3451, 'พังงา', 'กรุงเทพฯ', '12:00:00', '13:00:00', 3),
 (3465, 'กรุงเทพฯ', 'เชียงราย', '09:00:00', '11:00:00', 4),
