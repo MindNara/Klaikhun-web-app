@@ -62,9 +62,7 @@ const FlightCard = ({ flight_id, flight_beginning, flight_destination, time_depa
     <div className="bg-white drop-shadow-lg rounded-2xl w-full h-[240px] flex justify-center items-center mt-8">
       <div className="flex flex-row h-full py-[40px] w-full justify-between px-10">
         <div className="flex flex-col justify-center items-center">
-          <div className="bg-black rounded-2xl w-[100px] h-[75px] mb-2">
-            <img className="" src={airline_logo} />
-          </div>
+          <img className="bg-black rounded-2xl w-[100px] h-auto mb-2" src={airline_logo} />
           <div className="text-center text-black font-medium">
             {airline_name}
           </div>

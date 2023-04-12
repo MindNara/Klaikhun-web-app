@@ -73,7 +73,7 @@ const HotelDetailCard = ({ hotelDetail }) => {
             </div>
 
             <div className="w-full mt-10 gap-10">
-                <a href="/hotelCheck" className="flex justify-center w-full bg-black text-white font-light rounded-2xl py-4">Book Now</a>
+                <a href={"/hotelCheck/" + hotelDetail.hotel_id} className="flex justify-center w-full bg-black text-white font-light rounded-2xl py-4">Book Now</a>
             </div>
         </div>
     );
