@@ -16,7 +16,7 @@ const DealCard = ({ pro }) => {
             <span className="text-2xl font-medium">{parseInt(pro.pro_discount * 100)}% OFF</span>
           </div>
           {/* <p className="text-gray-1">{pro.pro_detail}</p> */}
-          <button onClick={copy} className="tooltip bg-black p-2 flex items-center justify-center rounded-xl">
+          <button onClick={copy} className="tooltip bg-black p-3 max-2xl:p-1 flex items-center justify-center rounded-xl">
             <span className="text-white text-2xl font-medium tracking-wider">
               {pro.pro_code}
             </span>

@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/NavbarLanding";
 import ImgLanding from "../assets/ImgLanding.png";
 import { hotelList } from "../constants/hotelList";
@@ -12,8 +11,10 @@ import {
   DealCard,
 } from "../components/index";
 import topDes from "../constants/topDes.json";
+import axios from 'axios';
 
 const Landing = () => {
+
   const [showHotel, setShowHotel] = useState(true);
 
   const handleClick1 = () => {
@@ -24,12 +25,30 @@ const Landing = () => {
     setShowHotel(true);
   };
 
-  const deals = [];
-  const hotels = [];
+  const [deals, setDeals] = useState([]);
+  const [hotels, setHotels] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  function getData() {
+    axios.get('http://localhost:3000/')
+      .then((response) => {
+        setDeals(response.data.deals);
+        // console.log(response.data.deals);
+
+        setHotels(response.data.hotels);
+        // console.log(response.data.hotels);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   const topDest = [];
   for (let i = 0; i < 3; i++) {
-    deals.push(<DealCard pro={promotion[i]} />);
-    hotels.push(<ExploreHotelCard key={hotelList[i]} {...hotelList[i]} />);
     topDest.push(<TopDesCard des={topDes[i]} />);
   }
 
@@ -88,10 +107,14 @@ const Landing = () => {
       <div className="container mx-auto space-y-16 mt-[160px]">
         {/* <!-- Promotions --> */}
         <div className="promotions">
-          <span className="font-medium text-4xl flex justify-center">
+          <h1 className="font-medium text-4xl flex justify-center">
             Accommodation Promotions
-          </span>
-          <div className="grid grid-cols-3 w-full gap-8 py-10">{deals}</div>
+          </h1>
+          <div className="grid grid-cols-3 w-full gap-8 py-10">
+            {deals.slice(0, 3).map((prop) => {
+              return <DealCard pro={prop} />;
+            })}
+          </div>
         </div>
 
         {/* <!-- Images --> */}
@@ -109,20 +132,28 @@ const Landing = () => {
 
         {/* <!-- Top destinations --> */}
         <div className="topDestinations">
-          <span className="font-medium text-3xl">
+          <h1 className="font-medium text-3xl">
             Top destinations in Thailand
-          </span>
-          <div className="flex flex-wrap space-x-5 py-10">
+          </h1>
+          <div className="flex flex-wrap space-x-7 max-2xl:space-x-6 py-10">
             {topDest}
           </div>
         </div>
 
         {/* <!-- Explore hotels --> */}
         <div className="exploreHotels">
-          <span className="font-medium text-3xl">
-            Explore more travel vacation hotels
-          </span>
-          <div className="flex flex-wrap space-x-5 py-10">{hotels}</div>
+          <div className="flex items-center justify-between">
+            <h1 className="font-medium text-3xl">
+              Explore more travel vacation hotels
+            </h1>
+            <a href="/hotels" className="bg-gray-3 px-3 py-2 rounded-lg text-gray-1 text-sm hover:text-black hover:underline"><span>Viwes All</span></a>
+          </div>
+
+          <div className="flex flex-wrap space-x-7 max-2xl:space-x-6 py-10">
+            {hotels.slice(0, 3).map((prop) => {
+              return <ExploreHotelCard hotel={prop} />;
+            })}
+          </div>
         </div>
       </div>
     </div>
