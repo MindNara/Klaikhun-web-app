@@ -33,7 +33,7 @@ const Hotel = () => {
       </div>
       <div className="container mx-auto flex gap-10 mt-40">
         {/* ------------------- filter ------------------- */}
-        <form method="POST">
+        <form method="GET">
         <div className="flex flex-col w-full max-2xl:w-[15rem]">
           <div className="flex w-full justify-between items-center">
             <h1 className="text-2xl font-medium">Filters</h1>
@@ -143,25 +143,25 @@ const Hotel = () => {
             <h1 className="text-gray-1 text-xl">Guest Rating</h1>
             <form className="flex flex-col gap-1 mt-2">
               <div>
-                <input type="radio" name="guest" />
+                <input type="radio" name="guest" value={"nine"} />
                 <label className="text-gray-1 ml-2" for="nine">
                   9+ Exceptional
                 </label>
               </div>
               <div>
-                <input type="radio" name="guest" />
+                <input type="radio" name="guest" value={"eight"} />
                 <label className="text-gray-1 ml-2" for="eight">
                   8+ Excellent
                 </label>
               </div>
               <div>
-                <input type="radio" name="guest" />
+                <input type="radio" name="guest" value={"seven"} />
                 <label className="text-gray-1 ml-2" for="seven">
                   7+ Very Good
                 </label>
               </div>
               <div>
-                <input type="radio" name="guest" />
+                <input type="radio" name="guest" value={"six"} />
                 <label className="text-gray-1 ml-2" for="six">
                   6+ Good
                 </label>
@@ -175,26 +175,26 @@ const Hotel = () => {
             <h1 className="text-gray-1 text-xl">Location</h1>
             <form className="flex flex-col gap-1 mt-2">
               <div>
-                <input type="radio" name="guest" />
+                <input type="checkbox" name="location" value={"CM"} />
                 <label className="text-gray-1 ml-2" for="CM">
                   Chiang Mai
                 </label>
               </div>
               <div>
-                <input type="radio" name="guest" />
-                <label className="text-gray-1 ml-2" for="four">
+                <input type="checkbox" name="location" value={"CB"} />
+                <label className="text-gray-1 ml-2" for="CB">
                   Chon Buri
                 </label>
               </div>
               <div>
-                <input type="radio" name="guest" />
-                <label className="text-gray-1 ml-2" for="three">
+                <input type="checkbox" name="location" value={"KY"} />
+                <label className="text-gray-1 ml-2" for="KY">
                   Khao Yai
                 </label>
               </div>
               <div>
-                <input type="radio" name="guest" />
-                <label className="text-gray-1 ml-2" for="two">
+                <input type="checkbox" name="location" value={"PB"} />
+                <label className="text-gray-1 ml-2" for="PB">
                   Prachin Buri
                 </label>
               </div>
