@@ -3,7 +3,8 @@ const pool = require("../config");
 
 const router = express.Router();
 
-router.get('/hotels', async function (req, res, next) {
+router.get('/hotels', async function (req, res) {
+    //filter from query string
     var min_price = req.query.minP || 0
     var max_price = req.query.maxP || 99999
     var star5 = req.query.five ||  ''
@@ -12,13 +13,14 @@ router.get('/hotels', async function (req, res, next) {
     var star2 = req.query.two || ''
     var star1 = req.query.one || ''
     var nostar = req.query.no || ''
-    var guest = req.query.guest || ''
+    var rating = req.query.rating || '0'
     var location = req.query.location || ''
-    console.log(location)
 
     try {
 
-        const [hotels, hotelsFields] = await pool.query("SELECT * FROM hotels");
+        const [hotels, hotelsFields] = await pool.query(
+            "SELECT * FROM hotels WHERE review_score > ? AND room_price >= ? AND room_price <= ?", 
+        [rating, min_price, max_price]);
 
         res.json({
             hotels: hotels,
