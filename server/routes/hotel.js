@@ -42,7 +42,6 @@ router.get('/hotels', async function (req, res) {
             class_filter += "0,"
         }
         class_filter = class_filter.slice(0, -1)
-        console.log(class_filter)
     }
 
     try {
@@ -50,7 +49,7 @@ router.get('/hotels', async function (req, res) {
         const [hotels, hotelsFields] = await pool.query(
             `SELECT * FROM hotels WHERE review_score > ? AND room_price >= ? AND room_price <= ?
             ${haveStar ? `AND hotel_class IN (${class_filter})`: ""}
-            ${cm ? "AND hotel_location LIKE '%Chiang Mai%' OR hotel_location LIKE '%เชียงใหม่%'": ""}
+            ${cm ? "AND (hotel_location LIKE '%Chiang Mai%' OR hotel_location LIKE '%เชียงใหม่%')": ""}
             ${cb ? "AND hotel_location LIKE '%Chon Buri%' OR hotel_location LIKE '%ชลบุรี%' OR hotel_location LIKE '%พัทยา%'": ""}
             ${ky ? "AND hotel_location LIKE '%Khao Yai%' OR hotel_location LIKE '%เขาใหญ่%'": ""}
             ${pb ? "AND hotel_location LIKE '%Prachin Buri%' OR hotel_location LIKE '%ปราจีนบุรี%'": ""}`, 

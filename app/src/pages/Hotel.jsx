@@ -11,8 +11,8 @@ const Hotel = () => {
   const [guestRating, setGuestRating] = useState("0")
   const [minP , setMinP] = useState(0)
   const [maxP, setMaxP] = useState(99999)
-  var params = {}
-  var navigate = useNavigate()
+  // var params = {}
+  const [params, setParams] = useState({})
   
   
   function getHotels() {
@@ -28,96 +28,78 @@ const Hotel = () => {
   
   const handleRatingChange = e => {
     setGuestRating(e.target.value)
-    params.rating = e.target.value
-    console.log(params)
-    getHotels();
+    setParams({...params, "rating": e.target.value})
   }
 
   const handleMinPriceChange = e => {
     setMinP(e.target.value)
-    params.minP = e.target.value
-    getHotels();
+    setParams({...params, "minP": e.target.value})
   }
 
   const handleMaxPriceChange = e => {
     setMaxP(e.target.value)
-    params.maxP = e.target.value
-    getHotels();
+    setParams({...params, "maxP": e.target.value})
   }
 
   const handleStar5Change = e => {
     const isChecked = e.target.checked
     params.five = isChecked
-    console.log(params.five)
-    getHotels();
+    setParams({...params, "five": isChecked})
   }
 
   const handleStar4Change = e => {
     const isChecked = e.target.checked
-    params.four = isChecked
-    console.log(params.four)
-    getHotels();
+    setParams({...params, "four": isChecked})
   }
 
   const handleStar3Change = e => {
     const isChecked = e.target.checked
-    params.three = isChecked
-    console.log(params.three)
-    getHotels();
+    setParams({...params, "three": isChecked})
   }
 
   const handleStar2Change = e => {
     const isChecked = e.target.checked
-    params.two = isChecked
-    console.log(params.two)
-    getHotels();
+    setParams({...params, "two": isChecked})
   }
 
   const handleStar1Change = e => {
     const isChecked = e.target.checked
-    params.one = isChecked
-    console.log(params.one)
-    getHotels();
+    setParams({...params, "one": isChecked})
   }
 
   const handleStarNoChange = e => {
     const isChecked = e.target.checked
-    params.no = isChecked
-    console.log(params.no)
-    getHotels();
+    setParams({...params, "no": isChecked})
   }
 
   const handleCMChange = e => {
     const isChecked = e.target.checked
-    params.cm = isChecked
-    console.log(params.cm)
-    getHotels();
+    setParams({...params, "cm": isChecked})
   }
 
   const handleCBChange = e => {
     const isChecked = e.target.checked
-    params.cb = isChecked
-    console.log(params.cb)
-    getHotels();
+    setParams({...params, "cb": isChecked})
   }
 
   const handleKYChange = e => {
     const isChecked = e.target.checked
-    params.ky = isChecked
-    console.log(params.ky)
-    getHotels();
+    setParams({...params, "ky": isChecked})
   }
 
   const handlePBChange = e => {
     const isChecked = e.target.checked
-    params.pb = isChecked
-    console.log(params.pb)
-    getHotels();
+    setParams({...params, "pb": isChecked})
+  }
+
+  const handelClearFilter = e => {
+    setParams({})
   }
 
   useEffect(() => {
     getHotels();
-  }, []);
+    console.log(params)
+  }, [params]);
 
   return (
     <>
@@ -133,7 +115,7 @@ const Hotel = () => {
         <div className="flex flex-col w-full max-2xl:w-[15rem]">
           <div className="flex w-full justify-between items-center">
             <h1 className="text-2xl font-medium">Filters</h1>
-            <button className="bg-gray-3 text-gray-1 p-2 px-3 rounded-xl">
+            <button className="bg-gray-3 text-gray-1 p-2 px-3 rounded-xl" onClick={ handelClearFilter } >
               Reset filters
             </button>
           </div>
