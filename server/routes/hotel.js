@@ -20,6 +20,8 @@ router.get('/hotels', async function (req, res) {
     var ky = req.query.ky === 'true' || false
     var pb = req.query.pb === 'true' || false
     var class_filter = ''
+    var hotel_filter = ''
+    var provice_list = []
 
     if (star5 | star4 | star3 | star2 | star1 | nostar){
         haveStar = true
@@ -44,15 +46,37 @@ router.get('/hotels', async function (req, res) {
         class_filter = class_filter.slice(0, -1)
     }
 
+    if (cm | cb | ky | pb){
+        hotel_filter = 'AND ('
+        if (cm) {
+            provice_list.push("hotel_location LIKE '%Chiang Mai%' OR hotel_location LIKE '%เชียงใหม่%'")
+        }
+        if (cb) {
+            provice_list.push("hotel_location LIKE '%Chon Buri%' OR hotel_location LIKE '%ชลบุรี%' OR hotel_location LIKE '%พัทยา%'")
+        }
+        if (ky) {
+            provice_list.push("hotel_location LIKE '%Khao Yai%' OR hotel_location LIKE '%เขาใหญ่%'")
+        }
+        if (pb) {
+            provice_list.push("hotel_location LIKE '%Prachin Buri%' OR hotel_location LIKE '%ปราจีนบุรี%'")
+        }
+        for (let i=0; i<provice_list.length; i++){
+            hotel_filter += provice_list[i]
+            if (i+1 != provice_list.length){
+                hotel_filter += " OR "
+            }
+            else {
+                hotel_filter += ')'
+            }
+        }
+    }
+
     try {
 
         const [hotels, hotelsFields] = await pool.query(
             `SELECT * FROM hotels WHERE review_score > ? AND room_price >= ? AND room_price <= ?
             ${haveStar ? `AND hotel_class IN (${class_filter})`: ""}
-            ${cm ? "AND (hotel_location LIKE '%Chiang Mai%' OR hotel_location LIKE '%เชียงใหม่%')": ""}
-            ${cb ? "AND hotel_location LIKE '%Chon Buri%' OR hotel_location LIKE '%ชลบุรี%' OR hotel_location LIKE '%พัทยา%'": ""}
-            ${ky ? "AND hotel_location LIKE '%Khao Yai%' OR hotel_location LIKE '%เขาใหญ่%'": ""}
-            ${pb ? "AND hotel_location LIKE '%Prachin Buri%' OR hotel_location LIKE '%ปราจีนบุรี%'": ""}`, 
+            ${provice_list.length != 0 ? hotel_filter: ""}`, 
         [rating, min_price, max_price]);
 
         res.json({
