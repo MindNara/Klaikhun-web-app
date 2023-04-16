@@ -13,19 +13,23 @@ export default function HotelCheckOutCard() {
       <div className="flex w-full justify-between items-center gap-10">
         <div className="w-full">
           <h1 className="text-gray-1 text-xl">Check-In</h1>
-          <input
-            className="border border-solid border-gray-5 rounded-3xl p-3 px-5 text-gray-1 mt-4 w-full"
+          <div
+            className="bg-gray-3 rounded-3xl p-3 px-5 text-gray-1 mt-4 w-full"
             type="date"
             name="checkIn"
-          />
+          >
+            dd/mm/yyyy
+          </div>
         </div>
         <div className="w-full">
           <h1 className="text-gray-1 text-xl">Check-Out</h1>
-          <input
-            className="border border-solid border-gray-5 rounded-3xl p-3 px-5 text-gray-1 mt-4 w-full"
+          <div
+            className="bg-gray-3 rounded-3xl p-3 px-5 text-gray-1 mt-4 w-full"
             type="date"
-            name="checkOut"
-          />
+            name="checkIn"
+          >
+            dd/mm/yyyy
+          </div>
         </div>
       </div>
 
