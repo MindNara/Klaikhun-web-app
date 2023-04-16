@@ -72,7 +72,7 @@ const Navbar = () => {
               "flex absolute right-0 top-10 z-10 mt-2 w-36 origin-top-right rounded-md bg-white shadow-lg"
             }
           >
-            <div class="py-1" role="none">
+            <div class="py-1 w-full" role="none">
               <a href="/Profile" class="text-black block px-4 py-2 text-sm">
                 Profile
               </a>

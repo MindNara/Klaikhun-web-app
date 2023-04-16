@@ -1,6 +1,7 @@
-import { React, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { hotelList } from "../constants/hotelList";
 import { Navbar, HotelCard, FlightCard } from "../components/index";
+import axios from 'axios';
 
 const Profile = () => {
     const [showCard, setShowCard] = useState(false);
@@ -22,6 +23,32 @@ const Profile = () => {
         setShowStatus(true);
     };
 
+    // const [bookHotel, setBookHotel] = useState(true);
+    // const [bookFilght, setBookFilght] = useState(true);
+    const [member, setMember] = useState(true);
+    const [loading, setLoading] = useState(true);
+
+    function getProfile() {
+        axios.get('http://localhost:3000/profile')
+            .then((response) => {
+                // setBookHotel(response.data.checkOutHotel);
+                // console.log(response.data.checkOutHotel);
+
+                // setBookFilght(response.data.checkOutFlight);
+                // console.log(response.data.checkOutFlight);
+
+                setMember(response.data.member);
+                // console.log(response.data.member);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }
+
+    useEffect(() => {
+        getProfile();
+    }, []);
+
     return (
         <>
             <div className="flex justify-center items-center">
@@ -38,30 +65,30 @@ const Profile = () => {
                             <div className="bg-black w-20 h-20 rounded-xl"></div>
                             <div className="flex flex-col">
                                 <span>Name</span>
-                                <span className="text-xl font-medium">Username</span>
+                                <span className="text-xl font-medium">{member.mem_username}</span>
                             </div>
                         </div>
 
                         <div className="bg-gray-3 px-5 py-3 rounded-xl" name="email">
                             <div className="flex flex-col">
                                 <span>Email</span>
-                                <span className="font-light">username@gmail.com</span>
+                                <span className="font-light">{member.mem_email}</span>
                             </div>
                         </div>
 
                         <div className="bg-gray-3 px-5 py-3 rounded-xl" name="phone">
                             <div className="flex flex-col">
                                 <span>Phone Number</span>
-                                <span className="font-light">098-9999999</span>
+                                <span className="font-light">{member.mem_phone}</span>
                             </div>
                         </div>
 
-                        <div className="bg-gray-3 px-5 py-3 rounded-xl" name="password">
+                        {/* <div className="bg-gray-3 px-5 py-3 rounded-xl" name="password">
                             <div className="flex flex-col">
                                 <span>Password</span>
-                                <span className="font-light">xxxxxx</span>
+                                <span className="font-light">XXXXXX</span>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -75,21 +102,16 @@ const Profile = () => {
                         </div>
                     </div>
 
-                    <div className="w-full">
-                        <button onClick={clickCompleted} className={`${showStatus ? "text-black bg-gray-3 font-normal" : "text-white bg-black"} w-1/2 h-14 px-8 py-3 max-2xl:py-2 max-2xl:px-6 rounded-l-xl font-light text-xl`}>Completed</button>
-                        <button onClick={clickCanceled} className={`${showStatus ? "text-white bg-black" : "text-black bg-gray-3 font-normal"} w-1/2 h-14 px-8 py-3 max-2xl:py-2 max-2xl:px-6 rounded-r-xl font-light text-xl`}>Canceled</button>
-                    </div>
-
                     <div className={`${showStatus ? "hidden" : "block"}`}>
                         <div className="mt-10 max-2xl:mt-12" name="Completed">
-                            {/* {showCard ? 
-                                <FlightCard /> :
-                                hotelList.map((item) => (
-                                    <div className="mt-8 w-full">
-                                      <HotelCard key={item.id} {...item}/>
-                                    </div>
-                                ))
-                            } */}
+                            {/* {bookHotel.map((item) => (
+                                <div className="mt-8 w-full">
+                                    <HotelCard key={item.hotel_id} {...item} />
+                                </div>
+                            ))} */}
+                            {/* {bookFilght.map((item) => (
+                                <FlightCard key={item.flight_id} {...item} />
+                            ))} */}
                         </div>
                     </div>
                 </div>
