@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 12, 2023 at 05:47 PM
+-- Generation Time: Apr 16, 2023 at 02:09 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -258,16 +258,16 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`mem_id`, `mem_fname`, `mem_lname`, `mem_username`, `mem_password`, `mem_email`, `mem_phone`) VALUES
-(1, 'vitchayut', 'suebwong', 'best', '1234', 'best@gmail.com', '0853441555'),
-(2, 'OHM', 'xDDDDDDDDDDDD', 'ohm', '12345', 'ohm@gmail.com', '0813497618'),
-(3, 'MILD', 'asdasdasdasdasdasdasd', 'mild', '12345', 'dasdasdasdasd@xDDDDDD.com', '0812345667'),
-(4, 'FRESH', 'xDDDDD123', 'fresh', '12345', 'xDDDDDDD@asdasdasd.com', '0612345623'),
-(5, 'YOUNG ADULT', '007', 'young adult', '12345', 'num007@xDDDDDD.com', '0923413242'),
-(6, 'PUNIM', 'XZXZXZXZ', 'punim', '121212', 'punim@gmail.com', '0980976541'),
-(7, 'POP', 'MAKAO', 'pop', '12345', 'pop@gmail.com', '0987654321'),
-(8, 'UKIMA', 'SAKAWA', 'ukima', '1234', 'ukima@gmail.com', '0876567871'),
-(9, 'LOBOYA', 'PAPAYO', 'loboya', '1234', 'loboya@gmail.com', '0873576521'),
-(10, 'QUITY', 'KASTYUI', 'quity', '1234', 'quity@gmail.com', '0937865432');
+(1, 'วิชยุตม์', 'สืบวงษ์', 'besty', '1234', 'best@gmail.com', '0853441555'),
+(2, 'ธีรวัฒน์', 'ใจมิภักดิ์', 'ohmmy', '12345', 'ohm@gmail.com', '0813497618'),
+(3, 'นารากร', 'คงสักบัน', 'minddy', '12345', 'narakorn@gmail.com', '0812345667'),
+(4, 'ยลรดี', 'ประยูรพันธุ์รัตน์', 'freshy', '12345', 'fresh@gmail.com', '0612345623'),
+(5, 'ธนเดช', 'เจิ้ง', 'nhummy', '12345', 'nhum@gmail.com', '0923413242'),
+(6, 'นุ่มนวล', 'มาไข่', 'punimmy', '121212', 'punim@gmail.com', '0980976541'),
+(7, 'สมใจ', 'สุขสันต์', 'jaimy', '12345', 'somjai@gmail.com', '0987654321'),
+(8, 'พัชราภร', 'แสงพรม', 'phany', '1234', 'Pha02@gmail.com', '0876567871'),
+(9, 'ภูมิพรรค', 'ไชยจิต', 'phanny', '1234', 'Phanphum@gmail.com', '0873576521'),
+(10, 'นราธิป', 'ยาวแสง', 'noiny', '1234', 'quity@gmail.com', '0937865432');
 
 -- --------------------------------------------------------
 
