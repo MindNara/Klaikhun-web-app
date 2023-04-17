@@ -74,7 +74,7 @@ router.get('/hotels', async function (req, res) {
     try {
 
         const [hotels, hotelsFields] = await pool.query(
-            `SELECT * FROM hotels WHERE review_score > ? AND room_price >= ? AND room_price <= ?
+            `SELECT * FROM hotels WHERE review_score >= ? AND room_price >= ? AND room_price <= ?
             ${haveStar ? `AND hotel_class IN (${class_filter})`: ""}
             ${provice_list.length != 0 ? hotel_filter: ""}`, 
         [rating, min_price, max_price]);

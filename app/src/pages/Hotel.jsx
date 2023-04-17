@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, createSearchParams } from "react-router-dom";
-// import { hotelList } from "../constants/hotelList";
 import { Navbar, HotelSearch, HotelCard } from "../components/index";
 import axios from 'axios';
 
@@ -11,7 +9,6 @@ const Hotel = () => {
   const [guestRating, setGuestRating] = useState("0")
   const [minP , setMinP] = useState(0)
   const [maxP, setMaxP] = useState(99999)
-  // var params = {}
   const [params, setParams] = useState({})
   
   

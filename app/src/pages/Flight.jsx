@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-// import flights from "../constants/flights.json"
 import { FlightSearch, FlightCard } from "../components/index";
 import axios from 'axios';
 
@@ -8,9 +7,12 @@ const Flight = () => {
 
   const [flights, setFlights] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [params, setParams] = useState({})
+  const [minP, setMinP] = useState(0)
+  const [maxP, setMaxP] = useState(99999)
 
   function getFlights() {
-    axios.get('http://localhost:3000/flights')
+    axios.get('http://localhost:3000/flights', { params })
       .then((response) => {
         setFlights(response.data.flights);
         console.log(response.data.flights);
@@ -20,9 +22,44 @@ const Flight = () => {
       });
   }
 
+  const handleMinPriceChange = e => {
+    setMinP(e.target.value)
+    setParams({...params, "minP": e.target.value})
+  }
+
+  const handleMaxPriceChange = e => {
+    setMaxP(e.target.value)
+    setParams({...params, "maxP": e.target.value})
+  }
+
+  const handleBkkAirChange = e => {
+    const isChecked = e.target.checked
+    setParams({...params, "bkkAir": isChecked})
+  }
+
+  const handleNokAirChange = e => {
+    const isChecked = e.target.checked
+    setParams({...params, "nokAir": isChecked})
+  }
+
+  const handleAirAsiaChange = e => {
+    const isChecked = e.target.checked
+    setParams({...params, "airAsia": isChecked})
+  }
+  
+  const handleThSmileChange = e => {
+    const isChecked = e.target.checked
+    setParams({...params, "thSmile": isChecked})
+  }
+
+  const handelClearFilter = e => {
+    setParams({})
+    window.location.reload(false)
+  }
+
   useEffect(() => {
     getFlights();
-  }, []);
+  }, [params]);
 
   return (
     <>
@@ -39,7 +76,7 @@ const Flight = () => {
         <div className="flex flex-col w-[25%] max-2xl:w-[20rem]">
           <div className="flex w-full justify-between items-center">
             <h1 className="text-2xl font-medium">Filters</h1>
-            <button className="bg-gray-3 text-gray-1 p-2 px-3 rounded-xl">
+            <button className="bg-gray-3 text-gray-1 p-2 px-3 rounded-xl" onClick={ handelClearFilter }>
               Reset filters
             </button>
           </div>
@@ -53,7 +90,8 @@ const Flight = () => {
                 className="border border-solid border-gray-5 rounded-3xl p-3 px-5 text-gray-1 mt-4 w-full"
                 type="number"
                 name="minP"
-                value="0"
+                value={minP}
+                onChange={ handleMinPriceChange }
               />
             </div>
             <div>
@@ -62,36 +100,37 @@ const Flight = () => {
                 className="border border-solid border-gray-5 rounded-3xl p-3 px-5 text-gray-1 mt-4 w-full"
                 type="number"
                 name="maxP"
-                value="10000"
+                value={maxP}
+                onChange={ handleMaxPriceChange }
               />
             </div>
           </div>
 
-          {/* --------------- star rating ---------------- */}
+          {/* --------------- Airline Filter ---------------- */}
 
           <div className="mt-5">
             <h1 className="text-gray-1 text-xl">Airline</h1>
             <form className="flex flex-col gap-1 mt-2">
               <div>
-                <input type="checkbox" name="bkka" />
+                <input type="checkbox" name="bkka" onChange={ handleBkkAirChange } />
                 <label className="ml-2 text-gray-1" for="bkkAir">
                   Bangkok Airways
                 </label>
               </div>
               <div>
-                <input type="checkbox" name="nokAir" />
+                <input type="checkbox" name="nokAir" onChange={ handleNokAirChange } />
                 <label className="ml-2 text-gray-1" for="nokAir">
                   Nok Air
                 </label>
               </div>
               <div>
-                <input type="checkbox" name="thaiAir" />
+                <input type="checkbox" name="thaiAir" onChange={ handleAirAsiaChange } />
                 <label className="ml-2 text-gray-1" for="thaiAir">
                   Thai AirAsia
                 </label>
               </div>
               <div>
-                <input type="checkbox" name="thaiSmile" />
+                <input type="checkbox" name="thaiSmile" onChange={ handleThSmileChange } />
                 <label className="ml-2 text-gray-1" for="thaiSmile">
                   THAI Smile
                 </label>
