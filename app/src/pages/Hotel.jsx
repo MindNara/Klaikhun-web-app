@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, HotelSearch, HotelCard } from "../components/index";
+import { useLocation } from "react-router-dom";
 import axios from 'axios';
 
 const Hotel = () => {
@@ -10,7 +11,8 @@ const Hotel = () => {
   const [minP , setMinP] = useState(0)
   const [maxP, setMaxP] = useState(99999)
   const [params, setParams] = useState({})
-  
+  const location = useLocation()
+  const { province } = location.state || {}
   
   function getHotels() {
     axios.get('http://localhost:3000/hotels', { params })
@@ -234,19 +236,19 @@ const Hotel = () => {
             <h1 className="text-gray-1 text-xl">Location</h1>
             <form className="flex flex-col gap-1 mt-2">
               <div>
-                <input type="checkbox" name="location" value="CM" onChange={handleCMChange} />
+                <input type="checkbox" name="location" value="CM" onChange={handleCMChange} defaultChecked={province == "Chiang Mai"} />
                 <label className="text-gray-1 ml-2" for="CM">
                   Chiang Mai
                 </label>
               </div>
               <div>
-                <input type="checkbox" name="location" value="CB" onChange={handleCBChange} />
+                <input type="checkbox" name="location" value="CB" onChange={handleCBChange} defaultChecked={province == "Chon Buri"}/>
                 <label className="text-gray-1 ml-2" for="CB">
                   Chon Buri
                 </label>
               </div>
               <div>
-                <input type="checkbox" name="location" value="KY" onChange={handleKYChange} />
+                <input type="checkbox" name="location" value="KY" onChange={handleKYChange} defaultChecked={province == "Khao Yai"} />
                 <label className="text-gray-1 ml-2" for="KY">
                   Khao Yai
                 </label>
