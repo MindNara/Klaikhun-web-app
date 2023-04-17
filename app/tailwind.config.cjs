@@ -14,7 +14,8 @@ module.exports = {
       },
       'skyblue': '#DFF2FF',
       'white': '#FFFFFF',
-      'black': '#000000'
+      'black': '#000000',
+      'red': '#C30000',
     },
     extend: {},
   },

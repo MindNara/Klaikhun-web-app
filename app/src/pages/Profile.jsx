@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { hotelList } from "../constants/hotelList";
-import { Navbar, HotelCard, FlightCard } from "../components/index";
+import { Navbar, CheckOutHotelCard, CheckOutFlightCard } from "../components/index";
 import axios from 'axios';
 
 const Profile = () => {
@@ -15,27 +15,27 @@ const Profile = () => {
         setShowCard(true);
     };
 
-    const clickCompleted = () => {
-        setShowStatus(false);
-    };
+    // const clickCompleted = () => {
+    //     setShowStatus(false);
+    // };
 
-    const clickCanceled = () => {
-        setShowStatus(true);
-    };
+    // const clickCanceled = () => {
+    //     setShowStatus(true);
+    // };
 
-    // const [bookHotel, setBookHotel] = useState(true);
-    // const [bookFilght, setBookFilght] = useState(true);
-    const [member, setMember] = useState(true);
+    const [bookHotel, setBookHotel] = useState([]);
+    const [bookFilght, setBookFilght] = useState([]);
+    const [member, setMember] = useState([]);
     const [loading, setLoading] = useState(true);
 
     function getProfile() {
         axios.get('http://localhost:3000/profile')
             .then((response) => {
-                // setBookHotel(response.data.checkOutHotel);
+                setBookHotel(response.data.checkOutHotel);
                 // console.log(response.data.checkOutHotel);
 
-                // setBookFilght(response.data.checkOutFlight);
-                // console.log(response.data.checkOutFlight);
+                setBookFilght(response.data.checkOutFlight);
+                console.log(response.data.checkOutFlight);
 
                 setMember(response.data.member);
                 // console.log(response.data.member);
@@ -102,17 +102,16 @@ const Profile = () => {
                         </div>
                     </div>
 
-                    <div className={`${showStatus ? "hidden" : "block"}`}>
-                        <div className="mt-10 max-2xl:mt-12" name="Completed">
-                            {/* {bookHotel.map((item) => (
+                    <div name="myBooking">
+                        {showCard ?
+                            bookFilght.map((item) => (
+                                <CheckOutFlightCard key={item.flight_id} {...item} />
+                            )) :
+                            bookHotel.map((item) => (
                                 <div className="mt-8 w-full">
-                                    <HotelCard key={item.hotel_id} {...item} />
+                                    <CheckOutHotelCard key={item.hotel_id} {...item} />
                                 </div>
-                            ))} */}
-                            {/* {bookFilght.map((item) => (
-                                <FlightCard key={item.flight_id} {...item} />
-                            ))} */}
-                        </div>
+                            ))}
                     </div>
                 </div>
             </div>
