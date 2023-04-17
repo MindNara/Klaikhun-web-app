@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from 'axios';
 
-const CheckOutFlightCard = ({ flight_id, flight_beginning, flight_destination, time_departure, time_arriving, airline_name, airline_logo, ticket_price }) => {
+const CheckOutFlightCard = ({ ticket_id, flight_beginning, flight_destination, time_departure, time_arriving, airline_name, airline_logo, ticket_price }) => {
 
     function numberWithCommas(x) {
         if (x === undefined) {
@@ -57,6 +58,23 @@ const CheckOutFlightCard = ({ flight_id, flight_beginning, flight_destination, t
 
     }
 
+    const [loading, setLoading] = useState(true);
+
+    function deleteFlight() {
+        axios.delete('http://localhost:3000/profile', { params: { ticket_id } })
+            .then((response) => {
+                const isDeleted = response.data;
+                if (isDeleted) {
+                    window.location.href = '/profile';
+                } else {
+                    alert('Unable to delete hotel');
+                }
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }
+
     return (
         <div className="bg-white drop-shadow-lg rounded-2xl w-full h-[240px] flex justify-center items-center mt-8">
             <div className="flex flex-row h-full py-[40px] w-full justify-between px-10">
@@ -92,7 +110,7 @@ const CheckOutFlightCard = ({ flight_id, flight_beginning, flight_destination, t
                     <div className="text-black font-bold text-center text-2xl mb-1">
                         THB {numberWithCommas(ticket_price)}
                     </div>
-                    <button className="bg-red rounded-xl py-2 px-6">
+                    <button onClick={deleteFlight} className="bg-red rounded-xl py-2 px-6">
                         <h4 className="text-center text-white font-medium text-lg">Cancel</h4>
                     </button>
                 </div>

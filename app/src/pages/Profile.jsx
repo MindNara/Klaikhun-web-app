@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { hotelList } from "../constants/hotelList";
 import { Navbar, CheckOutHotelCard, CheckOutFlightCard } from "../components/index";
 import axios from 'axios';
 
@@ -15,14 +14,6 @@ const Profile = () => {
         setShowCard(true);
     };
 
-    // const clickCompleted = () => {
-    //     setShowStatus(false);
-    // };
-
-    // const clickCanceled = () => {
-    //     setShowStatus(true);
-    // };
-
     const [bookHotel, setBookHotel] = useState([]);
     const [bookFilght, setBookFilght] = useState([]);
     const [member, setMember] = useState([]);
@@ -35,7 +26,7 @@ const Profile = () => {
                 // console.log(response.data.checkOutHotel);
 
                 setBookFilght(response.data.checkOutFlight);
-                console.log(response.data.checkOutFlight);
+                // console.log(response.data.checkOutFlight);
 
                 setMember(response.data.member);
                 // console.log(response.data.member);
@@ -105,7 +96,7 @@ const Profile = () => {
                     <div name="myBooking">
                         {showCard ?
                             bookFilght.map((item) => (
-                                <CheckOutFlightCard key={item.flight_id} {...item} />
+                                <CheckOutFlightCard key={item.ticket_id} {...item} />
                             )) :
                             bookHotel.map((item) => (
                                 <div className="mt-8 w-full">

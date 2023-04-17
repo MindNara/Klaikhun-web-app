@@ -73,7 +73,7 @@ const Navbar = () => {
             }
           >
             <div class="py-1 w-full" role="none">
-              <a href="/Profile" class="text-black block px-4 py-2 text-sm">
+              <a href="/profile" class="text-black block px-4 py-2 text-sm">
                 Profile
               </a>
               <a href="/" class="text-black block w-full px-4 py-2 text-left text-sm">

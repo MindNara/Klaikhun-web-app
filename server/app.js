@@ -16,7 +16,6 @@ const hotelDetail = require('../server/routes/hotelDetail')
 const flight = require('../server/routes/flight')
 const deal = require('../server/routes/deal')
 const landing = require('../server/routes/landing')
-// const checkOutHotel = require('../server/routes/checkoutHotel')
 const profile = require('../server/routes/profile')
 
 app.use(hotel.router)
@@ -24,7 +23,6 @@ app.use(hotelDetail.router)
 app.use(flight.router)
 app.use(deal.router)
 app.use(landing.router)
-// app.use(checkOutHotel.router)
 app.use(profile.router)
 
 app.listen(3000, () => {
