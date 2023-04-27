@@ -56,7 +56,7 @@ INSERT INTO `airlines` (`airline_id`, `airline_name`, `airline_logo`) VALUES
 --
 
 CREATE TABLE `booking_flights` (
-  `booking_flight_id` int(11) NOT NULL,
+  `booking_flight_id` int(11) NOT NULL AUTO_INCREMENT,
   `booking_flight_date` date NOT NULL,
   `booking_flight_time` time NOT NULL,
   `ticket_id` int(11) NOT NULL,
@@ -86,7 +86,7 @@ INSERT INTO `booking_flights` (`booking_flight_id`, `booking_flight_date`, `book
 --
 
 CREATE TABLE `booking_hotels` (
-  `booking_hotel_id` int(11) NOT NULL,
+  `booking_hotel_id` int(11) NOT NULL AUTO_INCREMENT,
   `booking_hotel_date` date NOT NULL,
   `booking_hotel_time` time NOT NULL,
   `booking_guest_amount` int(11) NOT NULL,
