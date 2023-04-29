@@ -1,9 +1,9 @@
 import { React, useState }from 'react'
 
 const CheckOutInfo = () => {
-    const [fullName, setFullName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+    const [fullName, setFullName] = useState('นารากร คงสักบัน');
+    const [email, setEmail] = useState('narakorn@gmail.com');
+    const [phone, setPhone] = useState('091234XXXX');
 
 
   return (
