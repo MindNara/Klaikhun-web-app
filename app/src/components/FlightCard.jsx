@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
-const FlightCard = ({ flight_id, flight_beginning, flight_destination, time_departure, time_arriving, airline_name, airline_logo, ticket_price }) => {
+const FlightCard = ({ flight_id, flight_beginning, flight_destination, time_departure, time_arriving, airline_name, airline_logo, ticket_id, ticket_price }) => {
 
   function numberWithCommas(x) {
     if (x === undefined) {
@@ -57,6 +58,16 @@ const FlightCard = ({ flight_id, flight_beginning, flight_destination, time_depa
 
   }
 
+  function putFlightCheckout() {
+    axios.post(`http://localhost:3000/flightCheck/${flight_id}`, { ticketId: ticket_id })
+      .then((response) => {
+        console.log("checkoutSuccess");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
+
   return (
     <div className="bg-white drop-shadow-lg rounded-2xl w-full h-[240px] flex justify-center items-center mt-8">
       <div className="flex flex-row h-full py-[40px] w-full justify-between px-10">
@@ -92,7 +103,7 @@ const FlightCard = ({ flight_id, flight_beginning, flight_destination, time_depa
           <div className="text-black font-bold text-center text-2xl mb-1">
             THB {numberWithCommas(ticket_price)}
           </div>
-          <a href={"/flightCheck/" + flight_id} className="bg-black rounded-lg py-3 px-8">
+          <a href={"/flightCheck/" + flight_id} onClick={putFlightCheckout} className="bg-black rounded-lg py-3 px-8">
             <h4 className="text-center text-white font-medium text-lg">Book</h4>
           </a>
         </div>

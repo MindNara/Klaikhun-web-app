@@ -70,7 +70,8 @@ const Profile = () => {
                         <div className="bg-gray-3 px-5 py-3 rounded-xl" name="phone">
                             <div className="flex flex-col">
                                 <span>Phone Number</span>
-                                <span className="font-light">{member.mem_phone}</span>
+                                <span className="font-light">091234XXXX</span>
+                                {/* <span className="font-light">{member.mem_phone}</span> */}
                             </div>
                         </div>
 
