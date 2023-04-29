@@ -36,12 +36,29 @@ router.post("/hotels/:hotelId", async (req, res) => {
     }
 })
 
-router.post("/checkoutFlight", async (req, res) => {
-    const { ticketId } = req.body
+
+router.get("/flightCheck/:flightId", async (req, res) => {
+
+    try {
+
+        const [flightCheck, flightCheckFields] = await pool.query("SELECT flight_id, flight_beginning, flight_destination, ticket_id, ticket_price FROM booking_flights JOIN tickets USING (ticket_id) JOIN flights USING (flight_id) WHERE flight_id = ?",
+            [req.params.flightId]);
+
+        res.json({
+            flightCheck: flightCheck,
+        });
+
+    } catch (err) {
+        console.log(err)
+    }
+})
+
+router.post("/flightCheck/:flightId", async (req, res) => {
+    const { ticketId } = req.body;
     const membetId = 3
 
     try {
-        const [rows, field] = await pool.query('INSERT INTO booking_flights (booking_flight_date, booking_flight_time ,ticket_id ,mem_id) VALUE (curdate(), curtime(), ?, ?)'
+        const [rows, field] = await pool.query('INSERT INTO booking_flights(booking_flight_date, booking_flight_time, ticket_id ,mem_id) VALUE (curdate(), curtime(), ?, ?)'
             , [ticketId, membetId])
 
         res.status(200).send("checkoutSuccess")

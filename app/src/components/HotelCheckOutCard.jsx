@@ -46,7 +46,7 @@ export default function HotelCheckOutCard() {
   const nightCount = Math.ceil(timeDiff / (1000 * 3600 * 24));
   // console.log(nightCount);
   const roomPriceTotal = (roomPrice * roomAmount * nightCount);
-  const discount = roomPriceTotal * 0.5;
+  const discount = (roomPriceTotal * 0.5).toFixed(2);
 
   return (
     <div className="border border-gray-2 rounded-[40px] h-full px-10 py-14 m-16 max-2xl:w-[30rem] w-[35rem]">
