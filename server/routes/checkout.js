@@ -3,7 +3,27 @@ const pool = require("../config");
 
 const router = express.Router();
 
-router.post("/checkoutHotel", async (req, res) => {
+router.get("/flightCheck/:flightId", async (req, res, next) => {
+    try {
+
+        const [flightData, flightfield] = await pool.query('SELECT flight_id, flight_beginning, flight_destination, ticket_price FROM flights JOIN tickets USING (flight_id) WHERE flight_id = ?' 
+        , [req.params.flightId]);
+        const [deals, dealsFields] = await pool.query('SELECT * FROM promotions');
+
+        res.json({
+            flightData: flightData,
+            deals: deals,
+        });
+
+    } catch (error) {
+
+        console.error(error);
+        return next(error);
+
+    }
+});
+
+router.post("/hotelCheck", async (req, res) => {
     const {hotelId, guestAmount, roomAmount, checkInDate, checkOutDate } = req.body
     const membetId = 3
 
@@ -17,7 +37,7 @@ router.post("/checkoutHotel", async (req, res) => {
     }
 })
 
-router.post("/checkoutFlight", async (req, res) => {
+router.post("/flightCheck", async (req, res) => {
     const { ticketId } = req.body
     const membetId = 3
 
@@ -30,3 +50,5 @@ router.post("/checkoutFlight", async (req, res) => {
         console.log(err)
     }
 })
+
+exports.router = router
