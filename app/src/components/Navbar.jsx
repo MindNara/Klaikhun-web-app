@@ -57,7 +57,7 @@ const Navbar = () => {
 
         {/*                         profile card                            */}
         <div className="relative flex items-center md:order-2 z-10">
-          <span className="text-base font-medium mr-5">Hi, Member Name</span>
+          <span className="text-base font-medium mr-5">Hi, minddy</span>
           <button
             onClick={() => {
               dropdownModel ? closeDropdown() : openDropdown();
