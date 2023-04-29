@@ -20,6 +20,8 @@ export default function HotelCheckOutCard() {
 
   const routeParams = useParams();
   const [hotelCheck, setHotelCheck] = useState([]);
+  const [deals, setDeals] = useState([]);
+  const [discount, setDiscount] = useState(0);
   const [loading, setLoading] = useState(true);
 
   function getHotelCheck() {
@@ -27,11 +29,32 @@ export default function HotelCheckOutCard() {
       .then((response) => {
         setHotelCheck(response.data.hotelCheck[0]);
         console.log(response.data.hotelCheck[0]);
+        setDeals(response.data.deals)
+        console.log(response.data.deals)
       })
       .finally(() => {
         setLoading(false);
       });
   }
+
+  const updateDiscount = (event) => {
+    console.log(event.target.value)
+    validateCode(event.target.value)
+}
+
+
+const validateCode = (code) => {
+   for (let item = 0; item < deals.length; item++){
+        if (code == deals[item].pro_code){
+            setDiscount(deals[item].pro_discount)
+            console.log(item)
+            break
+        }
+        else{
+            setDiscount(0)
+        }
+    }
+} 
 
   useEffect(() => {
     getHotelCheck();
@@ -44,9 +67,9 @@ export default function HotelCheckOutCard() {
   const checkOut = new Date(hotelCheck.booking_check_out_date);
   const timeDiff = Math.abs(checkOut.getTime() - checkIn.getTime());
   const nightCount = Math.ceil(timeDiff / (1000 * 3600 * 24));
-  // console.log(nightCount);
+  console.log(nightCount);
   const roomPriceTotal = (roomPrice * roomAmount * nightCount);
-  const discount = (roomPriceTotal * 0.5).toFixed(2);
+
 
   return (
     <div className="border border-gray-2 rounded-[40px] h-full px-10 py-14 m-16 max-2xl:w-[30rem] w-[35rem]">
@@ -103,7 +126,7 @@ export default function HotelCheckOutCard() {
             className="border border-solid border-gray-5 rounded-3xl p-3 px-5 text-gray-1 mt-4 w-full"
             type="text"
             name="discountcode"
-            value="welcome50"
+            onChange={ updateDiscount }
           />
         </div>
       </div>
@@ -120,8 +143,8 @@ export default function HotelCheckOutCard() {
               <span>THB {numberWithCommas(roomPrice * roomAmount * nightCount)}</span>
             </div>
             <div className="text-gray-1 flex justify-between">
-              <span>Discount 50%</span>
-              <span>- THB {numberWithCommas(discount)}</span>
+              <span>Discount { discount* 100 }%</span>
+              <span>- THB {numberWithCommas(roomPriceTotal*discount)}</span>
             </div>
           </div>
         </div>
@@ -129,7 +152,7 @@ export default function HotelCheckOutCard() {
 
       <div className="flex w-full justify-between mt-10">
         <h1 className="text-xl">Total Payment</h1>
-        <h1 className="text-2xl">THB {numberWithCommas(roomPriceTotal - discount)}</h1>
+        <h1 className="text-2xl">THB {numberWithCommas(roomPriceTotal*(1 - discount))}</h1>
       </div>
 
       <div className="w-full mt-10 gap-10">
