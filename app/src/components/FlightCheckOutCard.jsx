@@ -1,7 +1,7 @@
 import { React, useContext, useState } from "react";
 import { statusContext } from "./status";
 
-function FlightCheckOutCard({flightData, deals}) {
+function FlightCheckOutCard({ flightData, deals }) {
 
     const numberWithCommas = (x) => {
         if (x === undefined) {
@@ -24,17 +24,17 @@ function FlightCheckOutCard({flightData, deals}) {
 
 
     const validateCode = (code) => {
-       for (let item = 0; item < deals.length; item++){
-            if (code == deals[item].pro_code){
+        for (let item = 0; item < deals.length; item++) {
+            if (code == deals[item].pro_code) {
                 setDiscount(deals[item].pro_discount)
                 console.log(item)
                 break
             }
-            else{
+            else {
                 setDiscount(0)
             }
         }
-    } 
+    }
     const updateStatus = () => {
         setStatus(1);
     };
@@ -65,7 +65,7 @@ function FlightCheckOutCard({flightData, deals}) {
                         value={passenger}
                         name="passenger"
                         min="1"
-                        onChange={ updatePassenger }
+                        onChange={updatePassenger}
                     />
                 </div>
             </div>
@@ -77,7 +77,7 @@ function FlightCheckOutCard({flightData, deals}) {
                         className="border border-solid border-gray-5 rounded-3xl p-3 px-5 text-gray-1 mt-4 w-full"
                         type="text"
                         name="discountcode"
-                        onChange= { updateDiscount }
+                        onChange={updateDiscount}
                     />
                 </div>
             </div>
@@ -88,11 +88,11 @@ function FlightCheckOutCard({flightData, deals}) {
                     <div className="w-full bg-gray-3 py-6 px-10 mt-4 rounded-2xl">
                         <div className="text-gray-1 flex justify-between">
                             <span>{passenger} Passenger</span>
-                            <span>{ numberWithCommas(flightData.ticket_price * passenger) }</span>
+                            <span>{numberWithCommas(flightData.ticket_price * passenger)}</span>
                         </div>
                         <div className="text-gray-1 flex justify-between">
-                            <span>{ discount* 100 }%</span>
-                            <span>- THB { numberWithCommas((flightData.ticket_price * passenger * discount).toFixed(2))}</span>
+                            <span>Discount {discount * 100}%</span>
+                            <span>- THB {numberWithCommas((flightData.ticket_price * passenger * discount).toFixed(2))}</span>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ function FlightCheckOutCard({flightData, deals}) {
 
             <div className="flex w-full justify-between mt-10">
                 <h1 className="text-xl">Total Payment</h1>
-                <h1 className="text-2xl">THB { numberWithCommas((flightData.ticket_price * passenger * (1 - discount)).toFixed(2))}</h1>
+                <h1 className="text-2xl">THB {numberWithCommas((flightData.ticket_price * passenger * (1 - discount)).toFixed(2))}</h1>
             </div>
 
             <div className="w-full mt-10 gap-10">

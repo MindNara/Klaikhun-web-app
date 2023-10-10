@@ -102,7 +102,7 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="container mx-auto space-y-16 mt-[160px]">
+      <div className="container mx-auto space-y-16 mt-[180px]">
         {/* <!-- Promotions --> */}
         <div className="promotions">
           <h1 className="font-medium text-4xl flex justify-center">
